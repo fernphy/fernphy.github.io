@@ -1,18 +1,17 @@
 ---
-title: "Fern Tree of Life"
+title: "The Fern Tree of Life (FTOL)"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  A webportal hosting the Fern Tree of Life and associated data
 site: distill::distill_website
+bibliography: references.yaml
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
 
+The Fern Tree of Life (FTOL) is a global phylogeny of extant fern species based on plastid DNA sequences.
+
+For a complete description, see @Nitta2022.
+
+FTOL is an on-going project and will be regularly updated as new sequence data become available.

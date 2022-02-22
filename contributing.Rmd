@@ -1,0 +1,12 @@
+---
+title: "Contributing"
+description: |
+  How you can help build FTOL
+bibliography: references.yaml
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+FTOL is a community-driven project. Contributions are welcome.

@@ -7,6 +7,10 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Methods"
+      href: methods.html
+    - text: "Downloads"
+      href: downloads.html
+    - text: "Contributing"
+      href: contributing.html
 output: distill::distill_article

@@ -1,0 +1,41 @@
+---
+title: "Downloads"
+description: |
+  Current and past versions of FTOL available for download
+bibliography: references.yaml
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+FTOL is available in several flavors:
+
+- The maximum likelihood (ML) tree has branchlengths in units of expected genetic change per site and is fully bifurcating.
+- The consensus tree is the majority-rule consensus of the bootstrap trees, and may include polytomies. 
+- The dated tree has branchlengths in units of time (Ma) and is ultrametric.
+- The backbone ML tree only includes species that have complete plastome sequences available.
+
+All trees are rooted on bryophytes and include outgroup taxa. Node labels are bootstrap support values (%) measured with ultra-fast bootstrap [@Hoang2018].
+
+All trees are in [Newick format](https://en.wikipedia.org/wiki/Newick_format).
+
+For more options (rooting, inclusion of outgroup, etc.), use the `ftolr` R package.
+
+## Current version (FTOL v0.0.2)
+
+- ML tree
+- Consensus tree
+- Dated ML tree
+- Dated consensus tree
+- Backbone ML tree
+
+## Older versions
+
+### v0.0.1
+
+Due to differences in methods, no backbone tree was produced and only the consensus tree was dated.
+
+- ML tree
+- Consensus tree
+- Dated consensus tree

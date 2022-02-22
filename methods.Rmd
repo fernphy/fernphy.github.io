@@ -1,0 +1,25 @@
+---
+title: "Methods"
+description: |
+  Summary of methods used to infer phylogenies
+bibliography: references.yaml
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+For a full description of methods, see @Nitta2022.
+
+The goal of this project is to produce a maximally sampled global fern phylogeny.
+
+All DNA sequence data were downloaded from GenBank. The current FTOL (v0.0.2) includes sequences from \_\_ to \_\_.
+
+Two datasets were produced:
+
+- The "plastome" dataset includes 79 loci obtained from whole plastomes for \_\_ species.
+- The "Sanger" dataset includes seven plastid loci for \_\_ species.
+
+Phylogenetic analysis was carried out using maximum likelihood in IQ-TREE [@Nguyen2015] in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.
+
+The tree was dated using treePL [@Smith2012] with a set of \_\_ fossil constraints.
