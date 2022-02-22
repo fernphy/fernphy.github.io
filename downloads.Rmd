@@ -24,7 +24,7 @@ For more options (rooting, inclusion of outgroup, etc.), use the `ftolr` R packa
 
 ## Current version (FTOL v0.0.2)
 
-- ML tree
+- [ML tree](https://joelnitta.github.io/canaper/pkgdown.yml)
 - Consensus tree
 - Dated ML tree
 - Dated consensus tree
@@ -34,8 +34,7 @@ For more options (rooting, inclusion of outgroup, etc.), use the `ftolr` R packa
 
 ### v0.0.1
 
-Due to differences in methods, no backbone tree was produced and only the consensus tree was dated.
+Due to differences in methods, no backbone tree was produced and only the consensus tree was retained and dated.
 
-- ML tree
 - Consensus tree
 - Dated consensus tree
