@@ -1,0 +1,128 @@
+references:
+- id: Hoang2018
+  accessed:
+  - year: 2022
+    month: 2
+    day: 6
+  author:
+  - family: Hoang
+    given: Diep Thi
+  - family: Chernomor
+    given: Olga
+  - family: Haeseler
+    given: Arndt
+    non-dropping-particle: von
+  - family: Minh
+    given: Bui Quang
+  - family: Vinh
+    given: Le Sy
+  citation-key: Hoang2018
+  container-title: Molecular Biology and Evolution
+  DOI: 10/gcxrqg
+  ISSN: 0737-4038, 1537-1719
+  issue: '2'
+  issued:
+  - year: 2018
+    month: 2
+    day: 1
+  language: en
+  page: 518-522
+  source: DOI.org (Crossref)
+  title: 'UFBoot2: Improving the Ultrafast Bootstrap Approximation'
+  title-short: UFBoot2
+  type: article-journal
+  URL: https://academic.oup.com/mbe/article/35/2/518/4565479
+  volume: '35'
+- id: Nitta2022
+  accessed:
+  - year: 2022
+    month: 2
+    day: 28
+  author:
+  - family: Nitta
+    given: Joel H.
+  - family: Schuettpelz
+    given: Eric
+  - family: Ramírez-Barahona
+    given: Santiago
+  - family: Iwasaki
+    given: Wataru
+  citation-key: Nitta2022
+  container-title: BioRxiv
+  DOI: FIXME
+  issued:
+  - year: 2022
+    month: 2
+    day: 28
+  language: en
+  title: An Open and Continuously Updated Fern Tree of Life (FTOL)
+  type: article-journal
+  URL: FIXME
+- id: Nguyen2015
+  author:
+  - family: Nguyen
+    given: Lam-Tung
+  - family: Schmidt
+    given: Heiko A.
+  - family: Haeseler
+    given: Arndt
+    non-dropping-particle: von
+  - family: Minh
+    given: Bui Quang
+  citation-key: Nguyen2015
+  container-title: Molecular Biology and Evolution
+  container-title-short: Mol. Biol. Evol.
+  DOI: 10.1093/molbev/msu300
+  ISSN: '15371719'
+  issue: '1'
+  issued:
+  - year: 2015
+  page: 268-274
+  title: 'IQ-TREE: A fast and effective stochastic algorithm for estimating maximum-likelihood
+    phylogenies'
+  type: article-journal
+  volume: '32'
+- id: Nitta2022
+  accessed:
+  - year: 2022
+    month: 2
+    day: 28
+  author:
+  - family: Nitta
+    given: Joel H.
+  - family: Schuettpelz
+    given: Eric
+  - family: Ramírez-Barahona
+    given: Santiago
+  - family: Iwasaki
+    given: Wataru
+  citation-key: Nitta2022
+  container-title: BioRxiv
+  DOI: FIXME
+  issued:
+  - year: 2022
+    month: 2
+    day: 28
+  language: en
+  title: An Open and Continuously Updated Fern Tree of Life (FTOL)
+  type: article-journal
+  URL: FIXME
+- id: Smith2012
+  author:
+  - family: Smith
+    given: Stephen A
+  - family: O'Meara
+    given: Brian C.
+  citation-key: Smith2012
+  container-title: Bioinformatics
+  DOI: 10.1093/bioinformatics/bts492
+  ISSN: '13674803'
+  issue: '20'
+  issued:
+  - year: 2012
+  page: 2689-2690
+  PMID: '22908216'
+  title: 'treePL: divergence time estimation using penalized likelihood for large
+    phylogenies'
+  type: article-journal
+  volume: '28'
