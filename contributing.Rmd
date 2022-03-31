@@ -9,4 +9,8 @@ bibliography: references.yaml
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-FTOL is a community-driven project. Contributions are welcome.
+FTOL is a community-driven project. Contributions are welcome!
+
+Please do let us know if something in the tree appears to need correction.
+
+The best way to make a contribution is to [file an issue on the FTOL github repo](https://github.com/fernphy/ftol/issues/).
