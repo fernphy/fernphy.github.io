@@ -2,7 +2,6 @@
 title: "Contributing"
 description: |
   How you can help build FTOL
-bibliography: references.yaml
 ---
 
 ```{r setup, include=FALSE}
