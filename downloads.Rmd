@@ -26,7 +26,7 @@ All trees are in [Newick format](https://en.wikipedia.org/wiki/Newick_format).
 
 ### Other data files
 
-The tree files are provided as part of a zipped data archive.
+The tree files are provided as part of a data archive (zip or tar.gz format).
 
 Other files in the archive include DNA sequence alignments, GenBank accession numbers, and fossil calibration points.
 
@@ -34,11 +34,12 @@ All files are described in the README.txt file contained within the archive.
 
 ## `ftolr` R pacakge
 
-For more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the [ftolr R package](https://github.com/fernphy/ftolr).
+For reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the [ftolr R package](https://github.com/fernphy/ftolr).
 
-## Current version
+## Current version: FTOL v1.0.0
 
-- [FTOL v1.0.0](https://github.com/fernphy/ftolr/blob/eb04bfd12677eca982707226b4c7a82ecafa0584/data-raw/ftol.zip)
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.0.0.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.0.0.tar.gz)
 
 ## Past versions
 
