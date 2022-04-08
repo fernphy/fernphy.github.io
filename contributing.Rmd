@@ -13,3 +13,12 @@ FTOL is a community-driven project. Contributions are welcome!
 Please do let us know if something in the tree appears to need correction.
 
 The best way to make a contribution is to [file an issue on the FTOL github repo](https://github.com/fernphy/ftol/issues/).
+
+## Contributors (FTOL Working Group)
+
+Alphabetical by last name
+
+- Wataru Iwasaki
+- Joel H. Nitta
+- Santiago Ramírez-Barahona
+- Eric Schuettpelz
