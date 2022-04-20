@@ -6,7 +6,7 @@
       "description": "How you can help build FTOL",
       "author": [],
       "contents": "\nFTOL is a community-driven project. Contributions are welcome!\nPlease do let us know if something in the tree appears to need correction.\nThe best way to make a contribution is to file an issue on the FTOL github repo.\nContributors (FTOL Working Group)\nAlphabetical by last name\nWataru Iwasaki\nJoel H. Nitta\nSantiago Ramírez-Barahona\nEric Schuettpelz\n\n\n\n",
-      "last_modified": "2022-04-08T01:22:13+00:00"
+      "last_modified": "2022-04-20T01:10:53+00:00"
     },
     {
       "path": "downloads.html",
@@ -14,23 +14,23 @@
       "description": "Current and past versions of FTOL available for download\n",
       "author": [],
       "contents": "\nAbout the data\nTree format\nFTOL is available in several flavors:\nThe maximum likelihood (ML) tree has branchlengths in units of expected genetic change per site.\nThe consensus tree is the extended majority-rule consensus of the bootstrap trees, with units in expected genetic change per site.\nThe dated tree has branchlengths in units of time (Ma) and is ultrametric.\nThe backbone ML tree only includes species that have complete plastome sequences available.\nAll trees are rooted on bryophytes and include outgroup taxa. Node labels are bootstrap support values (%) measured with ultra-fast bootstrap (Hoang et al. 2018).\nAll trees are in Newick format.\nOther data files\nThe tree files are provided as part of a data archive (zip or tar.gz format).\nOther files in the archive include DNA sequence alignments, GenBank accession numbers, and fossil calibration points.\nAll files are described in the README.txt file contained within the archive.\nftolr R pacakge\nFor reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the ftolr R package.\nCurrent version: FTOL v1.0.0\nzip\ntar.gz\nPast versions\nFTOL v0.0.1 (this version is hosted on FigShare and lacks some of the tree formats above due to changes in methodology)\n\n\n\nHoang, Diep Thi, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh, and Le Sy Vinh. 2018. “UFBoot2: Improving the Ultrafast Bootstrap Approximation.” Molecular Biology and Evolution 35 (2): 518–22. https://doi.org/10/gcxrqg.\n\n\n\n\n",
-      "last_modified": "2022-04-08T01:22:15+00:00"
+      "last_modified": "2022-04-20T01:10:54+00:00"
     },
     {
       "path": "index.html",
       "title": "The Fern Tree of Life (FTOL)",
       "description": "A webportal hosting the Fern Tree of Life and associated data\n",
       "author": [],
-      "contents": "\nThe Fern Tree of Life (FTOL) is a global phylogeny of extant fern species based on plastid DNA sequences.\nFor a complete description, see Nitta et al. (2022).\nFTOL is an on-going project and will be regularly updated as new sequence data become available.\n\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life (FTOL).” BioRxiv, February. https://doi.org/FIXME.\n\n\n\n\n",
-      "last_modified": "2022-04-08T01:22:16+00:00"
+      "contents": "\nThe Fern Tree of Life (FTOL) is a global phylogeny of extant fern species based on plastid DNA sequences.\nFor a complete description, see Nitta et al. (2022).\nFTOL is an on-going project and will be regularly updated as new sequence data become available.\n\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life (FTOL).” BioRxiv, February. https://doi.org/10.1101/2022.03.31.486640.\n\n\n\n\n",
+      "last_modified": "2022-04-20T01:10:55+00:00"
     },
     {
       "path": "methods.html",
       "title": "Methods",
       "description": "Summary of methods used to infer phylogenies\n",
       "author": [],
-      "contents": "\nFor a full description of methods, see Nitta et al. (2022).\nThe goal of this project is to produce a maximally sampled global fern phylogeny.\nAll DNA sequence data were downloaded from GenBank. The current FTOL (v1.0.0) includes sequences up to 2021-12-31.\nTwo datasets were produced:\nThe “plastome” dataset includes 79 loci obtained from whole plastomes for 429 species (including outgroup taxa).\nThe “Sanger” dataset includes 7 plastid loci for 5,581 species (including outgroup taxa).\nPhylogenetic analysis was carried out using maximum likelihood in IQ-TREE (Nguyen et al. 2015) in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.\nThe tree was dated using treePL (Smith and O’Meara 2012) with a set of 66 fossil constraints (not including the root).\n\n\n\nNguyen, Lam-Tung, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh. 2015. “IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating Maximum-Likelihood Phylogenies.” Molecular Biology and Evolution 32 (1): 268–74. https://doi.org/10.1093/molbev/msu300.\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life (FTOL).” BioRxiv, February. https://doi.org/FIXME.\n\n\nSmith, Stephen A, and Brian C. O’Meara. 2012. “treePL: Divergence Time Estimation Using Penalized Likelihood for Large Phylogenies.” Bioinformatics 28 (20): 2689–90. https://doi.org/10.1093/bioinformatics/bts492.\n\n\n\n\n",
-      "last_modified": "2022-04-08T01:22:30+00:00"
+      "contents": "\nFor a full description of methods, see Nitta et al. (2022).\nThe goal of this project is to produce a maximally sampled global fern phylogeny.\nAll DNA sequence data were downloaded from GenBank. The current FTOL (v1.0.0) includes sequences up to 2021-12-31.\nTwo datasets were produced:\nThe “plastome” dataset includes 79 loci obtained from whole plastomes for 429 species (including outgroup taxa).\nThe “Sanger” dataset includes 7 plastid loci for 5,581 species (including outgroup taxa).\nPhylogenetic analysis was carried out using maximum likelihood in IQ-TREE (Nguyen et al. 2015) in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.\nThe tree was dated using treePL (Smith and O’Meara 2012) with a set of 66 fossil constraints (not including the root).\n\n\n\nNguyen, Lam-Tung, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh. 2015. “IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating Maximum-Likelihood Phylogenies.” Molecular Biology and Evolution 32 (1): 268–74. https://doi.org/10.1093/molbev/msu300.\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life (FTOL).” BioRxiv, February. https://doi.org/10.1101/2022.03.31.486640.\n\n\nSmith, Stephen A, and Brian C. O’Meara. 2012. “treePL: Divergence Time Estimation Using Penalized Likelihood for Large Phylogenies.” Bioinformatics 28 (20): 2689–90. https://doi.org/10.1093/bioinformatics/bts492.\n\n\n\n\n",
+      "last_modified": "2022-04-20T01:11:07+00:00"
     }
   ],
   "collections": []
