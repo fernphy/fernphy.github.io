@@ -4,6 +4,8 @@
 
 The page is built with [Distill for Rmarkdown](https://rstudio.github.io/distill/)
 
+The command to build the site is `rmarkdown::render_site()`.
+
 ## Licenses
 
 Code: [MIT](LICENSE)
