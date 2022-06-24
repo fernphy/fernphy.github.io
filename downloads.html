@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span. { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1032,10 +1033,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
   
-  .figure img {
-    width: 100%;
-  }
-  
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1865,6 +1862,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1879,6 +1882,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+  
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+  
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
   
       // clear polling timer
       clearInterval(tid);
@@ -1978,6 +2006,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -2000,7 +2030,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
   
@@ -2099,7 +2129,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>The dated tree has branchlengths in units of time (Ma) and is ultrametric.</li>
 <li>The backbone ML tree only includes species that have complete plastome sequences available.</li>
 </ul>
-<p>All trees are rooted on bryophytes and include outgroup taxa. Node labels are bootstrap support values (%) measured with ultra-fast bootstrap <span class="citation" data-cites="Hoang2018">(Hoang et al. <a href="#ref-Hoang2018" role="doc-biblioref">2018</a>)</span>.</p>
+<p>All trees are rooted on algae (<em>Zygnema</em>) and include outgroup taxa, but <em>Zygnema</em> has been pruned from the dated trees. Node labels are bootstrap support values (%) measured with ultra-fast bootstrap <span class="citation" data-cites="Hoang2018">(Hoang et al. <a href="#ref-Hoang2018" role="doc-biblioref">2018</a>)</span>.</p>
 <p>All trees are in <a href="https://en.wikipedia.org/wiki/Newick_format">Newick format</a>.</p>
 <h3 id="other-data-files">Other data files</h3>
 <p>The tree files are provided as part of a data archive (zip or tar.gz format).</p>
@@ -2107,14 +2137,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>All files are described in the README.txt file contained within the archive.</p>
 <h2 id="ftolr-r-pacakge"><code>ftolr</code> R pacakge</h2>
 <p>For reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the <a href="https://github.com/fernphy/ftolr">ftolr R package</a>.</p>
-<h2 id="current-version-ftol-v1.0.0">Current version: FTOL v1.0.0</h2>
+<h2 id="current-version-v1.1.0">Current version: v1.1.0</h2>
+<p>Built with data from GenBank release 249 (cutoff date 2022-04-15).</p>
+<ul>
+<li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.1.0.zip">zip</a></li>
+<li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.1.0.tar.gz">tar.gz</a></li>
+</ul>
+<h2 id="past-versions">Past versions</h2>
+<h3 id="v1.0.0">v1.0.0</h3>
+<p>Cutoff date 2021-12-31. Does not include algae and was rooted on bryophytes.</p>
 <ul>
 <li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.0.0.zip">zip</a></li>
 <li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.0.0.tar.gz">tar.gz</a></li>
 </ul>
-<h2 id="past-versions">Past versions</h2>
+<h3 id="v0.0.1">v0.0.1</h3>
+<p>Hosted on FigShare and lacks some of the tree formats above due to changes in methodology.</p>
 <ul>
-<li><a href="https://figshare.com/articles/dataset/Fern_Tree_of_Life_v0_0_1/13251290">FTOL v0.0.1</a> (this version is hosted on FigShare and lacks some of the tree formats above due to changes in methodology)</li>
+<li><a href="https://figshare.com/articles/dataset/Fern_Tree_of_Life_v0_0_1/13251290">FTOL v0.0.1</a></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references" role="doc-bibliography">
