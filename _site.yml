@@ -11,6 +11,8 @@ navbar:
       href: methods.html
     - text: "Downloads"
       href: downloads.html
+    - text: "Data explorer"
+      href: shiny.html
     - text: "Contributing"
       href: contributing.html
 output: distill::distill_article

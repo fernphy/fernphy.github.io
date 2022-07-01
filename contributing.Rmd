@@ -18,6 +18,7 @@ The best way to make a contribution is to [file an issue on the FTOL github repo
 
 Alphabetical by last name
 
+- Susan Fawcett
 - Wataru Iwasaki
 - Joel H. Nitta
 - Santiago Ramírez-Barahona

@@ -15,13 +15,18 @@ library(ape)
 plastome_data <- ft_seqs(plastome = TRUE)
 sanger_data <- ft_seqs(plastome = FALSE)
 
+gb_release <- 249
+gb_cutoff <- "2022-04-15"
+
 ```
 
 For a full description of methods, see @Nitta2022.
 
 The goal of this project is to produce a maximally sampled global fern phylogeny.
 
-All DNA sequence data were downloaded from GenBank. The current FTOL (v1.0.0) includes sequences up to 2021-12-31.
+All DNA sequence data were downloaded from GenBank. The current FTOL (v`r ftolr::ft_data_ver()`) includes sequences up to `r gb_cutoff` (GenBank release `r gb_release`).
+
+Input data, including a database containing fern sequences from GenBank release `r gb_release`, are available on [FigShare](https://figshare.com/articles/dataset/Fern_Tree_of_Life_FTOL_input_data/19474316).
 
 Two datasets were produced:
 
