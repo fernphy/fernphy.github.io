@@ -11,6 +11,8 @@ navbar:
       href: methods.html
     - text: "Downloads"
       href: downloads.html
+    - text: "Tree viewer"
+      href: viewer.html
     - text: "Data explorer"
       href: shiny.html
     - text: "Contributing"

@@ -1,0 +1,19 @@
+---
+title: "FTOL Viewer"
+description: |
+  Interactive visualization of FTOL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The interactive tree visualization below shows families (inner ring) and orders (outer ring) on the dated, consensus tree (FTOL v`r ftolr::ft_data_ver()`), with branches colored by family. Move the mouse over a colored bar to see the name of the family or order. Species names are turned off by default but can be shown by adjusting the settings. The same visualization is available at [Interactive Tree of Life](https://itol.embl.de/tree/1191064828204461658714497).
+
+For more detailed, faster viewing, we recommend [downloading](https://fernphy.github.io/downloads.html) the tree and viewing it with [Dendroscope3](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/).
+
+```{r, out.width=720, out.extra='style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"'}
+knitr::include_url(
+  "https://itol.embl.de/tree/1191064828204461658714497",
+  height = 720)
+```
