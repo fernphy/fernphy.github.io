@@ -1,5 +1,5 @@
 ---
-title: "FTOL Viewer"
+title: "Tree Viewer"
 description: |
   Interactive visualization of FTOL
 ---
