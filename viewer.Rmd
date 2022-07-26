@@ -8,12 +8,12 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-The interactive tree visualization below shows families (inner ring) and orders (outer ring) on the dated, consensus tree (FTOL v`r ftolr::ft_data_ver()`), with branches colored by family. Move the mouse over a colored bar to see the name of the family or order. Species names are turned off by default but can be shown by adjusting the settings. The same visualization is available at [Interactive Tree of Life](https://itol.embl.de/tree/1191064828238691658722151).
+The interactive tree visualization below shows families (inner ring), suborders (middle ring), and orders (outer ring) on the dated, consensus tree (FTOL v`r ftolr::ft_data_ver()`), with branches colored by family. Move the mouse over a colored bar to see the name of the family, subfamily or order. Species names are turned off by default but can be shown by adjusting settings in the Control Panel. Colored strips and branches can also be turned on or off under "Datasets". The same visualization is available at [Interactive Tree of Life](https://itol.embl.de/tree/119106482862401658807851).
 
 For more detailed, faster viewing, we recommend [downloading](https://fernphy.github.io/downloads.html) the tree and viewing it with [Dendroscope3](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/).
 
 ```{r, out.width=720, out.extra='style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"'}
 knitr::include_url(
-  "https://itol.embl.de/tree/1191064828238691658722151",
+  "https://itol.embl.de/tree/119106482862401658807851",
   height = 720)
 ```
