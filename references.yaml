@@ -33,31 +33,6 @@ references:
   type: article-journal
   URL: https://academic.oup.com/mbe/article/35/2/518/4565479
   volume: '35'
-- id: Nitta2022
-  accessed:
-  - year: 2022
-    month: 2
-    day: 28
-  author:
-  - family: Nitta
-    given: Joel H.
-  - family: Schuettpelz
-    given: Eric
-  - family: Ramírez-Barahona
-    given: Santiago
-  - family: Iwasaki
-    given: Wataru
-  citation-key: Nitta2022
-  container-title: BioRxiv
-  DOI: 10.1101/2022.03.31.486640
-  issued:
-  - year: 2022
-    month: 2
-    day: 28
-  language: en
-  title: An Open and Continuously Updated Fern Tree of Life (FTOL)
-  type: article-journal
-  URL: https://doi.org/10.1101/2022.03.31.486640
 - id: Nguyen2015
   author:
   - family: Nguyen
