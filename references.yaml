@@ -85,8 +85,8 @@ references:
 - id: Nitta2022
   accessed:
   - year: 2022
-    month: 2
-    day: 28
+    month: 8
+    day: 24
   author:
   - family: Nitta
     given: Joel H.
@@ -97,16 +97,16 @@ references:
   - family: Iwasaki
     given: Wataru
   citation-key: Nitta2022
-  container-title: BioRxiv
-  DOI: 10.1101/2022.03.31.486640
+  container-title: Frontiers in Plant Sciences
+  DOI: 10.3389/fpls.2022.909768
   issued:
   - year: 2022
-    month: 2
-    day: 28
+    month: 8
+    day: 24
   language: en
-  title: An Open and Continuously Updated Fern Tree of Life (FTOL)
+  title: An Open and Continuously Updated Fern Tree of Life
   type: article-journal
-  URL: https://doi.org/10.1101/2022.03.31.486640
+  URL: https://doi.org/10.3389/fpls.2022.909768
 - id: Smith2012
   author:
   - family: Smith
