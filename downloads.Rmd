@@ -32,18 +32,36 @@ Other files in the archive include DNA sequence alignments, GenBank accession nu
 
 All files are described in the README.txt file contained within the archive.
 
-## `ftolr` R pacakge
+## `ftolr` R package
 
 For reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the [ftolr R package](https://github.com/fernphy/ftolr).
 
-## Current version: v`r ftolr::ft_data_ver()`
+## Current: v`r ftolr::ft_data_ver()`
 
-Built with data from GenBank release 249 (cutoff date 2022-04-15).
+```{r}
+backbone_n <-
+  ftolr::ft_tree(branch_len="raw", backbone = TRUE, drop_og = TRUE) |>
+  ape::Ntip()
+
+full_tree_n <-
+  ftolr::ft_tree(drop_og = TRUE) |>
+  ape::Ntip() |>
+  scales::number(big.mark = ",")
+```
+
+Built with data from GenBank release 251 (cutoff date 2022-08-15). Includes `r backbone_n` complete plastome sequences and `r full_tree_n` tips total (outgroups excluded unless othewise mentioned).
+
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.2.0.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.2.0.tar.gz)
+
+## Past versions
+
+### v1.1.0
+
+Built with data from GenBank release 249 (cutoff date 2022-04-15). Includes 423 complete plastome sequences and 5,582 tips total.
 
 - [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.1.0.zip)
 - [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.1.0.tar.gz)
-
-## Past versions
 
 ### v1.0.0
 
@@ -56,4 +74,4 @@ Cutoff date 2021-12-31. Does not include algae and was rooted on bryophytes.
 
 Hosted on FigShare and lacks some of the tree formats above due to changes in methodology.
 
-- [FTOL v0.0.1](https://figshare.com/articles/dataset/Fern_Tree_of_Life_v0_0_1/13251290)
+- [Data on FigShare](https://figshare.com/articles/dataset/Fern_Tree_of_Life_v0_0_1/13251290)
