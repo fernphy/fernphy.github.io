@@ -1,0 +1,10 @@
+/* css styles */
+
+.hero {
+  width: 50%;
+  max-height: 300px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
