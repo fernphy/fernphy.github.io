@@ -134,30 +134,6 @@
         "vctrs"
       ]
     },
-    "bookdown": {
-      "Package": "bookdown",
-      "Version": "0.27",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "249ccee87c5a8def5cb459fd0809cca4",
-      "Requirements": [
-        "htmltools",
-        "jquerylib",
-        "knitr",
-        "rmarkdown",
-        "tinytex",
-        "xfun",
-        "yaml"
-      ]
-    },
-    "brio": {
-      "Package": "brio",
-      "Version": "1.1.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "976cf154dfb043c012d87cddd8bca363",
-      "Requirements": []
-    },
     "broom": {
       "Package": "broom",
       "Version": "1.0.1",
@@ -308,18 +284,6 @@
         "withr"
       ]
     },
-    "desc": {
-      "Package": "desc",
-      "Version": "1.4.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "6b9602c7ebbe87101a9c8edb6e8b6d21",
-      "Requirements": [
-        "R6",
-        "cli",
-        "rprojroot"
-      ]
-    },
     "digest": {
       "Package": "digest",
       "Version": "0.6.30",
@@ -327,53 +291,6 @@
       "Repository": "CRAN",
       "Hash": "bf1cd206a5d170d132ef75c7537b9bdb",
       "Requirements": []
-    },
-    "distill": {
-      "Package": "distill",
-      "Version": "1.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "a63cb71f49496a5595819f836f06fdcb",
-      "Requirements": [
-        "base64enc",
-        "bookdown",
-        "digest",
-        "downlit",
-        "htmltools",
-        "jsonlite",
-        "knitr",
-        "lubridate",
-        "mime",
-        "openssl",
-        "png",
-        "rmarkdown",
-        "rprojroot",
-        "rstudioapi",
-        "stringr",
-        "whisker",
-        "xfun",
-        "xml2",
-        "yaml"
-      ]
-    },
-    "downlit": {
-      "Package": "downlit",
-      "Version": "0.4.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "79bf3f66590752ffbba20f8d2da94c7c",
-      "Requirements": [
-        "brio",
-        "desc",
-        "digest",
-        "evaluate",
-        "fansi",
-        "memoise",
-        "rlang",
-        "vctrs",
-        "withr",
-        "yaml"
-      ]
     },
     "dplyr": {
       "Package": "dplyr",
@@ -482,15 +399,15 @@
     },
     "ftolr": {
       "Package": "ftolr",
-      "Version": "1.1.0",
+      "Version": "1.2.1.9000",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "fernphy",
       "RemoteRepo": "ftolr",
       "RemoteRef": "main",
-      "RemoteSha": "b508d1ebdba9b3666ad5cf38dc2d898efa974480",
-      "Hash": "8a8eca6c2dd3485b148385b72bd3c03d",
+      "RemoteSha": "f9d5092f4b54eb8a47b7e56a5021f9b441663660",
+      "Hash": "859814fd883bd5b392c1054d492d3deb",
       "Requirements": [
         "ape",
         "assertthat"
@@ -880,14 +797,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "01f28d4278f15c76cddbea05899c5d6f",
-      "Requirements": []
-    },
-    "png": {
-      "Package": "png",
-      "Version": "0.1-7",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "03b7076c234cb3331288919983326c55",
       "Requirements": []
     },
     "prettyunits": {
@@ -1328,14 +1237,6 @@
         "vctrs",
         "withr"
       ]
-    },
-    "whisker": {
-      "Package": "whisker",
-      "Version": "0.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "ca970b96d894e90397ed20637a0c1bbe",
-      "Requirements": []
     },
     "withr": {
       "Package": "withr",

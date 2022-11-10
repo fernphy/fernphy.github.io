@@ -2,11 +2,13 @@
 title: "Downloads"
 description: |
   Current and past versions of FTOL available for download
+title-block-banner: true
 bibliography: references.yaml
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(ftolr)
 ```
 
 ## About the data
@@ -36,25 +38,32 @@ All files are described in the README.txt file contained within the archive.
 
 For reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the [ftolr R package](https://github.com/fernphy/ftolr).
 
-## Current: v`r ftolr::ft_data_ver()`
+## Current: v`r ft_data_ver()`
 
 ```{r}
 backbone_n <-
-  ftolr::ft_tree(branch_len="raw", backbone = TRUE, drop_og = TRUE) |>
+  ft_tree(branch_len = "raw", backbone = TRUE, drop_og = TRUE) |>
   ape::Ntip()
 
 full_tree_n <-
-  ftolr::ft_tree(drop_og = TRUE) |>
+  ft_tree(drop_og = TRUE) |>
   ape::Ntip() |>
   scales::number(big.mark = ",")
 ```
 
-Built with data from GenBank release 251 (cutoff date 2022-08-15). Includes `r backbone_n` complete plastome sequences and `r full_tree_n` tips total (outgroups excluded unless othewise mentioned).
+Tree exactly same as v1.2.0. Adds taxonomic name resolution results to data zip file.
+
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v`r ft_data_ver()`.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v`r ft_data_ver()`.tar.gz)
+
+## Past versions
+
+### v1.2.0
+
+Built with data from GenBank release 251 (cutoff date 2022-08-15). Includes 479 complete plastome sequences and 5,589 tips total (outgroups excluded unless othewise mentioned).
 
 - [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.2.0.zip)
 - [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.2.0.tar.gz)
-
-## Past versions
 
 ### v1.1.0
 

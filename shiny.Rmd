@@ -2,6 +2,7 @@
 title: "Data explorer"
 description: |
   Dig deeper into FTOL data
+title-block-banner: true
 ---
 
 ```{r setup, include=FALSE}

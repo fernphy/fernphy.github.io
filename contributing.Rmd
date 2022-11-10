@@ -1,5 +1,7 @@
 ---
 title: "Contributing"
+title-block-banner: true
+toc: false
 description: |
   How you can help build FTOL
 ---

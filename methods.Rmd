@@ -2,6 +2,7 @@
 title: "Methods"
 description: |
   Summary of methods used to infer phylogenies
+title-block-banner: true
 bibliography: references.yaml
 editor_options: 
   chunk_output_type: console
@@ -14,26 +15,22 @@ library(ape)
 
 plastome_data <- ft_seqs(plastome = TRUE)
 sanger_data <- ft_seqs(plastome = FALSE)
-
-gb_release <- 249
-gb_cutoff <- "2022-04-15"
-
 ```
 
 For a full description of methods, see @Nitta2022.
 
 The goal of this project is to produce a maximally sampled global fern phylogeny.
 
-All DNA sequence data were downloaded from GenBank. The current FTOL (v`r ftolr::ft_data_ver()`) includes sequences up to `r gb_cutoff` (GenBank release `r gb_release`).
+All DNA sequence data were downloaded from GenBank. The current FTOL (v`r ft_data_ver()`) includes sequences up to `r ft_data_ver("cutoff")` (GenBank release `r ft_data_ver("gb")`).
 
-Input data, including a database containing fern sequences from GenBank release `r gb_release`, are available on [FigShare](https://figshare.com/articles/dataset/Fern_Tree_of_Life_FTOL_input_data/19474316).
+Input data, including a database containing fern sequences from GenBank release `r ft_data_ver("gb")`, are available on [FigShare](https://figshare.com/articles/dataset/Fern_Tree_of_Life_FTOL_input_data/19474316).
 
 Two datasets were produced:
 
-- The "plastome" dataset includes `r dplyr::n_distinct(ftolr::plastome_parts$locus)` loci obtained from whole plastomes for `r nrow(plastome_data)` species (including outgroup taxa).
+- The "plastome" dataset includes `r dplyr::n_distinct(plastome_parts$locus)` loci obtained from whole plastomes for `r nrow(plastome_data)` species (including outgroup taxa).
 
-- The "Sanger" dataset includes `r dplyr::n_distinct(ftolr::sanger_parts$locus)` plastid loci for `r nrow(sanger_data) |> scales::number(big.mark = ",")` species (including outgroup taxa).
+- The "Sanger" dataset includes `r dplyr::n_distinct(sanger_parts$locus)` plastid loci for `r nrow(sanger_data) |> scales::number(big.mark = ",")` species (including outgroup taxa).
 
 Phylogenetic analysis was carried out using maximum likelihood in IQ-TREE [@Nguyen2015] in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.
 
-The tree was dated using treePL [@Smith2012] with a set of `r dplyr::n_distinct(ftolr::con_fossils$n_fos)` [fossil constraints](https://github.com/fernphy/ferncal) (not including the root).
+The tree was dated using treePL [@Smith2012] with a set of `r dplyr::n_distinct(con_fossils$n_fos)` [fossil constraints](https://github.com/fernphy/ferncal) (not including the root).

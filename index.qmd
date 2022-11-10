@@ -1,0 +1,15 @@
+---
+title: "Fern Tree of Life"
+bibliography: references.yaml
+body-footer: "test footer"
+---
+
+A webportal hosting the Fern Tree of Life (FTOL) and associated data
+
+![](./images/header_ferns.png){.hero fig-alt="Photo of Crepidomanes minutum by Joel H. Nitta licensed under [CC-BY](https://creativecommons.org/licenses/by/4.0/)"}
+
+FTOL is a global phylogeny of extant fern species based on plastid DNA sequences.
+
+For a complete description, see @Nitta2022.
+
+FTOL is an on-going project and will be regularly updated as new sequence data become available.

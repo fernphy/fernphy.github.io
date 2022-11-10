@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Fern Tree of Life"
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - href: methods.Rmd
+        text: Methods
+      - href: viewer.Rmd
+        text: Tree viewer
+      - href: shiny.Rmd
+        text: Data explorer
+      - href: downloads.Rmd
+        text: Downloads
+      - href: contributing.Rmd
+        text: Contributing
+  page-footer: "Fern Tree of Life by the FTOL Working Group is licensed under [CC-BY](https://creativecommons.org/licenses/by/4.0/) unless otherwise noted" 
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

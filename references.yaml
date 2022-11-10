@@ -76,12 +76,11 @@ references:
   DOI: 10.3389/fpls.2022.909768
   issued:
   - year: 2022
-    month: 8
-    day: 24
   language: en
   title: An Open and Continuously Updated Fern Tree of Life
   type: article-journal
   URL: https://doi.org/10.3389/fpls.2022.909768
+  volume: '13'
 - id: Smith2012
   author:
   - family: Smith
