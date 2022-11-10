@@ -2,9 +2,7 @@
 
 [Homepage of the FTOL project](https://fernphy.github.io/)
 
-The page is built with [Distill for Rmarkdown](https://rstudio.github.io/distill/)
-
-The command to build the site is `rmarkdown::render_site()`.
+The page is built with [Quarto](https://quarto.org/)
 
 ## Licenses
 
