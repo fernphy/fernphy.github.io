@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -81,22 +81,28 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./methods.html">Methods</a>
+    <a class="nav-link" href="./methods.html">
+ <span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./viewer.html" aria-current="page">Tree viewer</a>
+    <a class="nav-link active" href="./viewer.html" aria-current="page">
+ <span class="menu-text">Tree viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./shiny.html">Data explorer</a>
+    <a class="nav-link" href="./shiny.html">
+ <span class="menu-text">Data explorer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./downloads.html">Downloads</a>
+    <a class="nav-link" href="./downloads.html">
+ <span class="menu-text">Downloads</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contributing.html">Contributing</a>
+    <a class="nav-link" href="./contributing.html">
+ <span class="menu-text">Contributing</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -121,6 +127,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta">
 
       
+    
       
     </div>
     
@@ -137,10 +144,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>The interactive tree visualization below shows families (inner ring), suborders (middle ring), and orders (outer ring) on the dated, consensus tree (FTOL v1.2.1), with branches colored by family. Move the mouse over a colored bar to see the name of the family, subfamily or order. Species names are turned off by default but can be shown by adjusting settings in the Control Panel. Colored strips and branches can also be turned on or off under “Datasets”. The same visualization is available at <a href="https://itol.embl.de/tree/15782243211168881668057341">Interactive Tree of Life</a>.</p>
-<p>For more detailed, faster viewing, we recommend <a href="https://fernphy.github.io/downloads.html">downloading</a> the tree and viewing it with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/">Dendroscope3</a>.</p>
+<p>The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (FTOL v1.2.1). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at <a href="https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_con_dated.tre&amp;ladderizeTree=true&amp;treeType=nwk&amp;metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_sampling.csv&amp;xType=x_dist&amp;color=%7B%22field%22%3A%22meta_family%22%7D&amp;srch=%5B%5D">Taxonium</a>, where you can also upload other trees for viewing. For more details about using Taxonium, see the <a href="https://docs.taxonium.org/en/latest/index.html#">documentation</a>.</p>
+<p>If you want to view the tree in a desktop app, we recommend either <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/">Dendroscope3</a> or the <a href="https://docs.taxonium.org/en/latest/app.html">Taxonium desktop app</a>.</p>
 <div class="cell">
-<iframe src="https://itol.embl.de/tree/15782243211168881668057341" width="720" height="720" data-external="1" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+<iframe src="https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_con_dated.tre&amp;ladderizeTree=true&amp;treeType=nwk&amp;metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_sampling.csv&amp;xType=x_dist&amp;color=%7B%22field%22%3A%22meta_family%22%7D&amp;srch=%5B%5D" width="720" height="1200" data-external="1" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
 </div>
 
@@ -188,7 +195,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -224,24 +248,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
