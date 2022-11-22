@@ -1,0 +1,34 @@
+---
+title: "News"
+description: |
+  The latest updates about FTOL
+title-block-banner: true 
+---
+
+## 2022-11-22
+
+- [FTOL visualization](https://fernphy.github.io/viewer.html) changed from iTOL to [Taxonium](https://taxonium.org/). The Taxonium visualization is much faster, allowing for easy viewing directly in the browser.
+
+## 2022-11-08
+
+- [FTOL v1.2.0 and v1.2.1 released](https://fernphy.github.io/downloads.html#v1.2.0). The total number of species is similar to v1.1.0, but adds > 50 plastome sequences, resulting in a more robust backbone phylogeny.
+
+## 2022-08-31
+
+- FTOL [featured in 538's "Data is Plural" blog](https://fivethirtyeight.com/features/the-datasets-were-looking-at-this-week-16/).
+
+## 2022-08-24
+
+- The paper describing FTOL, "An open and continuously updated fern tree of life" [published in Frontiers in Plant Science](https://doi.org/10.3389/fpls.2022.909768).
+
+## 2021-07-21
+
+- Preprint for FTOL available on [bioRxiv](https://www.biorxiv.org/content/10.1101/2022.03.31.486640v3).
+
+## 2022-06-24
+
+- [FTO v1.1.0 released](https://fernphy.github.io/downloads.html#v1.1.0). From this point onwards, FTOL releases are tied to specific [versions of GenBank](https://www.ncbi.nlm.nih.gov/genbank/release/).
+
+## 2022-04-01
+
+- [FTOL v1.0.0 released](https://fernphy.github.io/downloads.html#v1.0.0).

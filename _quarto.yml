@@ -6,8 +6,6 @@ website:
   title: "Fern Tree of Life"
   navbar:
     right:
-      - href: index.qmd
-        text: Home
       - href: methods.Rmd
         text: Methods
       - href: viewer.Rmd
@@ -16,6 +14,8 @@ website:
         text: Data explorer
       - href: downloads.Rmd
         text: Downloads
+      - href: news.Qmd
+        text: News
       - href: contributing.Rmd
         text: Contributing
   page-footer: "Fern Tree of Life by the FTOL Working Group is licensed under [CC-BY](https://creativecommons.org/licenses/by/4.0/) unless otherwise noted" 
