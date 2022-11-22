@@ -56,6 +56,55 @@
     "text": "The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (FTOL v1.2.1). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at Taxonium, where you can also upload other trees for viewing. For more details about using Taxonium, see the documentation.\nIf you want to view the tree in a desktop app, we recommend either Dendroscope3 or the Taxonium desktop app."
   },
   {
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "News",
+    "section": "",
+    "text": "FTOL visualization changed from iTOL to Taxonium. The Taxonium visualization is much faster, allowing for easy viewing directly in the browser."
+  },
+  {
+    "objectID": "news.html#section-1",
+    "href": "news.html#section-1",
+    "title": "News",
+    "section": "2022-11-08",
+    "text": "2022-11-08\n\nFTOL v1.2.0 and v1.2.1 released. The total number of species is similar to v1.1.0, but adds > 50 plastome sequences, resulting in a more robust backbone phylogeny."
+  },
+  {
+    "objectID": "news.html#section-2",
+    "href": "news.html#section-2",
+    "title": "News",
+    "section": "2022-08-31",
+    "text": "2022-08-31\n\nFTOL featured in 538’s “Data is Plural” blog."
+  },
+  {
+    "objectID": "news.html#section-3",
+    "href": "news.html#section-3",
+    "title": "News",
+    "section": "2022-08-24",
+    "text": "2022-08-24\n\nThe paper describing FTOL, “An open and continuously updated fern tree of life” published in Frontiers in Plant Science."
+  },
+  {
+    "objectID": "news.html#section-4",
+    "href": "news.html#section-4",
+    "title": "News",
+    "section": "2021-07-21",
+    "text": "2021-07-21\n\nPreprint for FTOL available on bioRxiv."
+  },
+  {
+    "objectID": "news.html#section-5",
+    "href": "news.html#section-5",
+    "title": "News",
+    "section": "2022-06-24",
+    "text": "2022-06-24\n\nFTO v1.1.0 released. From this point onwards, FTOL releases are tied to specific versions of GenBank."
+  },
+  {
+    "objectID": "news.html#section-6",
+    "href": "news.html#section-6",
+    "title": "News",
+    "section": "2022-04-01",
+    "text": "2022-04-01\n\nFTOL v1.0.0 released."
+  },
+  {
     "objectID": "methods.html",
     "href": "methods.html",
     "title": "Methods",
