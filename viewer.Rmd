@@ -7,16 +7,16 @@ title-block-banner: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-tree_id <- "15782243211168881668057341" # v1.2.1
-tree_url <- paste0("https://itol.embl.de/tree/", tree_id)
+
+tree_url <- "https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_con_dated.tre&ladderizeTree=true&treeType=nwk&metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_sampling.csv&xType=x_dist&color=%7B%22field%22%3A%22meta_family%22%7D&srch=%5B%5D" # nolint
 ```
 
-The interactive tree visualization below shows families (inner ring), suborders (middle ring), and orders (outer ring) on the dated, consensus tree (FTOL v`r ftolr::ft_data_ver()`), with branches colored by family. Move the mouse over a colored bar to see the name of the family, subfamily or order. Species names are turned off by default but can be shown by adjusting settings in the Control Panel. Colored strips and branches can also be turned on or off under "Datasets". The same visualization is available at [Interactive Tree of Life](`r tree_url`).
+The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (FTOL v`r ftolr::ft_data_ver()`). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at [Taxonium](`r tree_url`), where you can also upload other trees for viewing. For more details about using Taxonium, see the [documentation](https://docs.taxonium.org/en/latest/index.html#).
 
-For more detailed, faster viewing, we recommend [downloading](https://fernphy.github.io/downloads.html) the tree and viewing it with [Dendroscope3](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/).
+If you want to view the tree in a desktop app, we recommend either [Dendroscope3](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/) or the [Taxonium desktop app](https://docs.taxonium.org/en/latest/app.html).
 
 ```{r, out.width=720, out.extra='style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"'}
 knitr::include_url(
   tree_url,
-  height = 720)
+  height = 1200)
 ```
