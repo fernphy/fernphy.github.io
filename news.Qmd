@@ -5,6 +5,11 @@ description: |
 title-block-banner: true 
 ---
 
+## 2022-12-06
+
+<!-- FIXME: change 'current' URL when update to next version -->
+- [FTOL v1.3.0 released](https://fernphy.github.io/downloads.html#current-v1.3.0).
+
 ## 2022-11-22
 
 - [FTOL visualization](https://fernphy.github.io/viewer.html) changed from iTOL to [Taxonium](https://taxonium.org/). The Taxonium visualization is much faster, allowing for easy viewing directly in the browser.

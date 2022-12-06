@@ -8,10 +8,21 @@ title-block-banner: true
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-tree_url <- "https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_con_dated.tre&ladderizeTree=true&treeType=nwk&metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_data%2Fmain%2Fftol_sanger_sampling.csv&xType=x_dist&color=%7B%22field%22%3A%22meta_family%22%7D&srch=%5B%5D" # nolint
+# For some reason using the JSON config directly in taxonium isn't working,
+# so add it to the URL (custom config option 1)
+# https://docs.taxonium.org/en/latest/advanced.html#custom-configuration
+config_url <- "https://raw.githubusercontent.com/fernphy/ftol_vis/main/_targets/user/taxonium/ftol_config.json" # nolint
+
+config_string <- jsonlite::read_json(config_url) |>
+  jsontools::format_json(auto_unbox = TRUE) |>
+  as.character()
+
+base_url <- "https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_vis%2Fmain%2F_targets%2Fuser%2Ftaxonium%2Fftol_tree.tree&ladderizeTree=true&treeType=nwk&metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_vis%2Fmain%2F_targets%2Fuser%2Ftaxonium%2Fftol_data.csv&metaType=meta_csv&xType=x_dist&color=%7B%22field%22%3A%22meta_family%22%7D" # nolint
+
+tree_url <- glue::glue("{base_url}&config={config_string}")
 ```
 
-The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (FTOL v`r ftolr::ft_data_ver()`). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at [Taxonium](`r tree_url`), where you can also upload other trees for viewing. For more details about using Taxonium, see the [documentation](https://docs.taxonium.org/en/latest/index.html#).
+The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (outgroup not shown). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at [Taxonium](`r tree_url`), where you can also upload other trees for viewing. For more details about using Taxonium, see the [documentation](https://docs.taxonium.org/en/latest/index.html#).
 
 If you want to view the tree in a desktop app, we recommend either [Dendroscope3](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/) or the [Taxonium desktop app](https://docs.taxonium.org/en/latest/app.html).
 
