@@ -15,7 +15,8 @@ config_url <- "https://raw.githubusercontent.com/fernphy/ftol_vis/main/_targets/
 
 config_string <- jsonlite::read_json(config_url) |>
   jsontools::format_json(auto_unbox = TRUE) |>
-  as.character()
+  as.character() |>
+  stringr::str_remove_all("\\[|\\]")
 
 base_url <- "https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_vis%2Fmain%2F_targets%2Fuser%2Ftaxonium%2Fftol_tree.tree&ladderizeTree=true&treeType=nwk&metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_vis%2Fmain%2F_targets%2Fuser%2Ftaxonium%2Fftol_data.csv&metaType=meta_csv&xType=x_dist&color=%7B%22field%22%3A%22meta_family%22%7D" # nolint
 

@@ -5,10 +5,14 @@ description: |
 title-block-banner: true 
 ---
 
-## 2022-12-06
+## 2023-02-16
 
 <!-- FIXME: change 'current' URL when update to next version -->
-- [FTOL v1.3.0 released](https://fernphy.github.io/downloads.html#current-v1.3.0).
+- [FTOL v1.4.0 released](https://fernphy.github.io/downloads.html#current-v1.4.0). This release includes an [important fix for a bug](https://github.com/fernphy/ftol/commit/2ef1f315f20b3554554941425dd11d68f7043a48) that previously suppressed the number of new species added to the tree.
+
+## 2022-12-06
+
+- [FTOL v1.3.0 released](https://fernphy.github.io/downloads.html#v1.3.0).
 
 ## 2022-11-22
 

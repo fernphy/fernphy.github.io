@@ -58,6 +58,13 @@ Built with data from GenBank release `r ft_data_ver("gb")` (cutoff date `r ft_da
 
 ## Past versions
 
+### v1.3.0
+
+Built with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total (outgroups excluded unless othewise mentioned).
+
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.3.0.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.3.0.tar.gz)
+
 ### v1.2.1
 
 Tree exactly same as v1.2.0. Adds taxonomic name resolution results to data zip file.
@@ -67,7 +74,7 @@ Tree exactly same as v1.2.0. Adds taxonomic name resolution results to data zip 
 
 ### v1.2.0
 
-Built with data from GenBank release 251 (cutoff date 2022-08-15). Includes 479 complete plastome sequences and 5,589 tips total (outgroups excluded unless othewise mentioned).
+Built with data from GenBank release 251 (cutoff date 2022-08-15). Includes 479 complete plastome sequences and 5,589 tips total.
 
 - [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.2.0.zip)
 - [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.2.0.tar.gz)
