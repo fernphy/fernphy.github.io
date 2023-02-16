@@ -32,7 +32,7 @@
     "href": "methods.html",
     "title": "Methods",
     "section": "",
-    "text": "For a full description of methods, see Nitta et al. (2022).\nThe goal of this project is to produce a maximally sampled global fern phylogeny.\nAll DNA sequence data were downloaded from GenBank. The current FTOL (v1.3.0) includes sequences up to 2022-10-15 (GenBank release 252).\nInput data, including a database containing fern sequences from GenBank release 252, are available on FigShare.\nTwo datasets were produced:\n\nThe “plastome” dataset includes 79 loci obtained from whole plastomes for 504 species (including outgroup taxa).\nThe “Sanger” dataset includes 7 plastid loci for 5,611 species (including outgroup taxa).\n\nPhylogenetic analysis was carried out using maximum likelihood in IQ-TREE (Nguyen et al. 2015) in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.\nThe tree was dated using treePL (Smith and O’Meara 2012) with a set of 54 fossil constraints (not including the root).\n\n\n\n\nReferences\n\nNguyen, Lam-Tung, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh. 2015. “IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating Maximum-Likelihood Phylogenies.” Molecular Biology and Evolution 32 (1): 268–74. https://doi.org/10.1093/molbev/msu300.\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life.” Frontiers in Plant Sciences 13. https://doi.org/10.3389/fpls.2022.909768.\n\n\nSmith, Stephen A, and Brian C. O’Meara. 2012. “treePL: Divergence Time Estimation Using Penalized Likelihood for Large Phylogenies.” Bioinformatics 28 (20): 2689–90. https://doi.org/10.1093/bioinformatics/bts492."
+    "text": "For a full description of methods, see Nitta et al. (2022).\nThe goal of this project is to produce a maximally sampled global fern phylogeny.\nAll DNA sequence data were downloaded from GenBank. The current FTOL (v1.4.0) includes sequences up to 2022-12-15 (GenBank release 253).\nInput data, including a database containing fern sequences from GenBank release 253, are available on FigShare.\nTwo datasets were produced:\n\nThe “plastome” dataset includes 79 loci obtained from whole plastomes for 528 species (including outgroup taxa).\nThe “Sanger” dataset includes 7 plastid loci for 5,704 species (including outgroup taxa).\n\nPhylogenetic analysis was carried out using maximum likelihood in IQ-TREE (Nguyen et al. 2015) in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.\nThe tree was dated using treePL (Smith and O’Meara 2012) with a set of 53 fossil constraints (not including the root).\n\n\n\n\nReferences\n\nNguyen, Lam-Tung, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh. 2015. “IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating Maximum-Likelihood Phylogenies.” Molecular Biology and Evolution 32 (1): 268–74. https://doi.org/10.1093/molbev/msu300.\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life.” Frontiers in Plant Sciences 13. https://doi.org/10.3389/fpls.2022.909768.\n\n\nSmith, Stephen A, and Brian C. O’Meara. 2012. “treePL: Divergence Time Estimation Using Penalized Likelihood for Large Phylogenies.” Bioinformatics 28 (20): 2689–90. https://doi.org/10.1093/bioinformatics/bts492."
   },
   {
     "objectID": "viewer.html",
@@ -119,11 +119,11 @@
     "text": "ftolr R package\nFor reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the ftolr R package."
   },
   {
-    "objectID": "downloads.html#current-v1.3.0",
-    "href": "downloads.html#current-v1.3.0",
+    "objectID": "downloads.html#current-v1.4.0",
+    "href": "downloads.html#current-v1.4.0",
     "title": "Downloads",
-    "section": "Current: v1.3.0",
-    "text": "Current: v1.3.0\n\n\n\nBuilt with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total (outgroups excluded unless othewise mentioned).\n\nzip\ntar.gz"
+    "section": "Current: v1.4.0",
+    "text": "Current: v1.4.0\n\n\n\nBuilt with data from GenBank release 253 (cutoff date 2022-12-15). Includes 509 complete plastome sequences and 5,685 tips total (outgroups excluded unless othewise mentioned).\n\nzip\ntar.gz"
   },
   {
     "objectID": "downloads.html#past-versions",
