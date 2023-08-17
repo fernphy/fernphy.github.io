@@ -22,7 +22,6 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - custom.scss
+    theme: litera
+    css: styles.css
     toc: true
