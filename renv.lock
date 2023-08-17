@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.1",
+    "Version": "4.3.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -416,15 +416,15 @@
     },
     "ftolr": {
       "Package": "ftolr",
-      "Version": "1.4.0",
+      "Version": "1.5.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "fernphy",
       "RemoteRepo": "ftolr",
       "RemoteRef": "main",
-      "RemoteSha": "c34e2459f8f791827dc248188cd3e490ad1357a8",
-      "Hash": "a6c51f5e5b79fda5ef82e2ec6ec7f89c",
+      "RemoteSha": "2d5cec57e2f74ad9457819463e1c97ecb4aa96d1",
+      "Hash": "cbd61f157c464daef48de4c9bb49aa6c",
       "Requirements": [
         "ape",
         "assertthat"
@@ -570,7 +570,7 @@
       "Package": "highr",
       "Version": "0.9",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "8eb36c8125038e648e5d111c0d7b2ed4",
       "Requirements": [
         "xfun"
