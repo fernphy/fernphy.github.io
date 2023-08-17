@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,14 +18,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -39,8 +40,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,7 +75,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -94,37 +95,39 @@ div.csl-indent {
     <span class="navbar-title">Fern Tree of Life</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./methods.html">
+    <a class="nav-link" href="./methods.html" rel="" target="">
  <span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html">
+    <a class="nav-link" href="./viewer.html" rel="" target="">
  <span class="menu-text">Tree viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./shiny.html">
+    <a class="nav-link" href="./shiny.html" rel="" target="">
  <span class="menu-text">Data explorer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./downloads.html" aria-current="page">
+    <a class="nav-link active" href="./downloads.html" rel="" target="" aria-current="page">
  <span class="menu-text">Downloads</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./news.html">
+    <a class="nav-link" href="./news.html" rel="" target="">
  <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contributing.html">
+    <a class="nav-link" href="./contributing.html" rel="" target="">
  <span class="menu-text">Contributing</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -168,6 +171,7 @@ div.csl-indent {
   <li><a href="#current-v1.4.0" id="toc-current-v1.4.0" class="nav-link" data-scroll-target="#current-v1.4.0">Current: v1.4.0</a></li>
   <li><a href="#past-versions" id="toc-past-versions" class="nav-link" data-scroll-target="#past-versions">Past versions</a>
   <ul class="collapse">
+  <li><a href="#v1.4.0" id="toc-v1.4.0" class="nav-link" data-scroll-target="#v1.4.0">v1.4.0</a></li>
   <li><a href="#v1.3.0" id="toc-v1.3.0" class="nav-link" data-scroll-target="#v1.3.0">v1.3.0</a></li>
   <li><a href="#v1.2.1" id="toc-v1.2.1" class="nav-link" data-scroll-target="#v1.2.1">v1.2.1</a></li>
   <li><a href="#v1.2.0" id="toc-v1.2.0" class="nav-link" data-scroll-target="#v1.2.0">v1.2.0</a></li>
@@ -211,9 +215,6 @@ div.csl-indent {
 </section>
 <section id="current-v1.4.0" class="level2">
 <h2 class="anchored" data-anchor-id="current-v1.4.0">Current: v1.4.0</h2>
-<div class="cell">
-
-</div>
 <p>Built with data from GenBank release 253 (cutoff date 2022-12-15). Includes 509 complete plastome sequences and 5,685 tips total (outgroups excluded unless othewise mentioned).</p>
 <ul>
 <li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.4.0.zip">zip</a></li>
@@ -222,6 +223,14 @@ div.csl-indent {
 </section>
 <section id="past-versions" class="level2">
 <h2 class="anchored" data-anchor-id="past-versions">Past versions</h2>
+<section id="v1.4.0" class="level3">
+<h3 class="anchored" data-anchor-id="v1.4.0">v1.4.0</h3>
+<p>Built with data from GenBank release 253 (cutoff date 2022-12-15). Includes 509 complete plastome sequences and 5,685 tips total.</p>
+<ul>
+<li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.4.0.zip">zip</a></li>
+<li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.4.0.tar.gz">tar.gz</a></li>
+</ul>
+</section>
 <section id="v1.3.0" class="level3">
 <h3 class="anchored" data-anchor-id="v1.3.0">v1.3.0</h3>
 <p>Built with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total (outgroups excluded unless othewise mentioned).</p>
@@ -274,8 +283,8 @@ div.csl-indent {
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Hoang2018" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Hoang2018" class="csl-entry" role="listitem">
 Hoang, Diep Thi, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh, and Le Sy Vinh. 2018. <span>“UFBoot2: Improving the Ultrafast Bootstrap Approximation.”</span> <em>Molecular Biology and Evolution</em> 35 (2): 518–22. <a href="https://doi.org/gcxrqg">https://doi.org/gcxrqg</a>.
 </div>
 </div></section></div></main> <!-- /main -->
@@ -306,9 +315,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -373,6 +396,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -415,7 +524,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Fern Tree of Life by the FTOL Working Group is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> unless otherwise noted</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Fern Tree of Life by the FTOL Working Group is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> unless otherwise noted</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 
