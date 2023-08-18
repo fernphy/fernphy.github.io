@@ -5,6 +5,7 @@ project:
 website:
   title: "Fern Tree of Life"
   navbar:
+    background: primary
     right:
       - href: methods.Rmd
         text: Methods
@@ -22,6 +23,7 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme:
+      - cosmo
+      - custom.scss
     toc: true
