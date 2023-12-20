@@ -51,12 +51,19 @@ full_tree_n <-
   scales::number(big.mark = ",")
 ```
 
-Built with data from GenBank release `r ft_data_ver("gb")` (cutoff date `r ft_data_ver("cutoff")`). Includes `r backbone_n` complete plastome sequences and `r full_tree_n` tips total (outgroups excluded unless othewise mentioned).
+Built with data from GenBank release `r ft_data_ver("gb")` (cutoff date `r ft_data_ver("cutoff")`). Includes `r backbone_n` complete plastome sequences and `r full_tree_n` tips total (outgroups excluded unless otherwise mentioned).
 
 - [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v`r ft_data_ver()`.zip)
 - [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v`r ft_data_ver()`.tar.gz)
 
 ## Past versions
+
+### v1.5.0
+
+Built with data from GenBank release 256 (cutoff date 2023-06-15). Includes 570 complete plastome sequences and 5,750 tips total.
+
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.5.0.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.5.0.tar.gz)
 
 ### v1.4.0
 
@@ -68,7 +75,7 @@ Built with data from GenBank release 253 (cutoff date 2022-12-15). Includes 509 
 
 ### v1.3.0
 
-Built with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total (outgroups excluded unless othewise mentioned).
+Built with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total.
 
 - [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.3.0.zip)
 - [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.3.0.tar.gz)
