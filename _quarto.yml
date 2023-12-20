@@ -27,3 +27,6 @@ format:
       - cosmo
       - custom.scss
     toc: true
+
+execute: 
+  freeze: false
