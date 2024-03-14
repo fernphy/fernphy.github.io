@@ -1,1 +1,1 @@
-Sitemap: https://github.com/fernphy/fernphy.github.io/sitemap.xml
+Sitemap: https://fernphy.github.io/sitemap.xml
