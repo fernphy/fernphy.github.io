@@ -536,20 +536,20 @@
     },
     "ftolr": {
       "Package": "ftolr",
-      "Version": "1.5.1",
+      "Version": "1.6.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "fernphy",
       "RemoteRepo": "ftolr",
       "RemoteRef": "main",
-      "RemoteSha": "0b84a0fe5291c6b2fa2c746713037c1fa4a8fe4f",
+      "RemoteSha": "0f48643b176ab6a759874e35ce623942fbba36a6",
       "Requirements": [
         "R",
         "ape",
         "assertthat"
       ],
-      "Hash": "06701eabd0f229e1976bfb1b6f02f404"
+      "Hash": "cf314da8680c0a7219b20c6be1a494a1"
     },
     "gargle": {
       "Package": "gargle",
