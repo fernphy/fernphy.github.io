@@ -1,124 +1,5 @@
 [
   {
-    "objectID": "shiny.html",
-    "href": "shiny.html",
-    "title": "Data explorer",
-    "section": "",
-    "text": "Please use the FTOL data explorer web app (https://fernphy.shinyapps.io/ftol_explorer/) to easily access more information about particular species in the tree, including GenBank accessions and taxonomy.\n\n\n\nScreenshot of FTOL explorer app"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fern Tree of Life",
-    "section": "",
-    "text": "A webportal hosting the Fern Tree of Life (FTOL) and associated data\n\nFTOL is a global phylogeny of extant fern species based on plastid DNA sequences.\nFor a complete description, see Nitta et al. (2022).\nFTOL is an on-going project and will be regularly updated as new sequence data become available.\n\n\n\n\nReferences\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life.” Frontiers in Plant Sciences 13. https://doi.org/10.3389/fpls.2022.909768."
-  },
-  {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "News",
-    "section": "",
-    "text": "FTOL v1.6.0 released."
-  },
-  {
-    "objectID": "news.html#section",
-    "href": "news.html#section",
-    "title": "News",
-    "section": "",
-    "text": "FTOL v1.6.0 released."
-  },
-  {
-    "objectID": "news.html#section-1",
-    "href": "news.html#section-1",
-    "title": "News",
-    "section": "2023-12-20",
-    "text": "2023-12-20\n\nFTOL v1.5.1 released."
-  },
-  {
-    "objectID": "news.html#section-2",
-    "href": "news.html#section-2",
-    "title": "News",
-    "section": "2023-08-17",
-    "text": "2023-08-17\n\nFTOL v1.5.0 released."
-  },
-  {
-    "objectID": "news.html#section-3",
-    "href": "news.html#section-3",
-    "title": "News",
-    "section": "2023-02-16",
-    "text": "2023-02-16\n\nFTOL v1.4.0 released. This release includes an important fix for a bug that previously suppressed the number of new species added to the tree."
-  },
-  {
-    "objectID": "news.html#section-4",
-    "href": "news.html#section-4",
-    "title": "News",
-    "section": "2022-12-06",
-    "text": "2022-12-06\n\nFTOL v1.3.0 released."
-  },
-  {
-    "objectID": "news.html#section-5",
-    "href": "news.html#section-5",
-    "title": "News",
-    "section": "2022-11-22",
-    "text": "2022-11-22\n\nFTOL visualization changed from iTOL to Taxonium. The Taxonium visualization is much faster, allowing for easy viewing directly in the browser."
-  },
-  {
-    "objectID": "news.html#section-6",
-    "href": "news.html#section-6",
-    "title": "News",
-    "section": "2022-11-08",
-    "text": "2022-11-08\n\nFTOL v1.2.0 and v1.2.1 released. The total number of species is similar to v1.1.0, but adds &gt; 50 plastome sequences, resulting in a more robust backbone phylogeny."
-  },
-  {
-    "objectID": "news.html#section-7",
-    "href": "news.html#section-7",
-    "title": "News",
-    "section": "2022-08-31",
-    "text": "2022-08-31\n\nFTOL featured in 538’s “Data is Plural” blog."
-  },
-  {
-    "objectID": "news.html#section-8",
-    "href": "news.html#section-8",
-    "title": "News",
-    "section": "2022-08-24",
-    "text": "2022-08-24\n\nThe paper describing FTOL, “An open and continuously updated fern tree of life” published in Frontiers in Plant Science."
-  },
-  {
-    "objectID": "news.html#section-9",
-    "href": "news.html#section-9",
-    "title": "News",
-    "section": "2021-07-21",
-    "text": "2021-07-21\n\nPreprint for FTOL available on bioRxiv."
-  },
-  {
-    "objectID": "news.html#section-10",
-    "href": "news.html#section-10",
-    "title": "News",
-    "section": "2022-06-24",
-    "text": "2022-06-24\n\nFTO v1.1.0 released. From this point onwards, FTOL releases are tied to specific versions of GenBank."
-  },
-  {
-    "objectID": "news.html#section-11",
-    "href": "news.html#section-11",
-    "title": "News",
-    "section": "2022-04-01",
-    "text": "2022-04-01\n\nFTOL v1.0.0 released."
-  },
-  {
-    "objectID": "methods.html",
-    "href": "methods.html",
-    "title": "Methods",
-    "section": "",
-    "text": "For a full description of methods, see Nitta et al. (2022).\nThe goal of this project is to produce a maximally sampled global fern phylogeny.\nAll DNA sequence data were downloaded from GenBank. The current FTOL (v1.6.0) includes sequences up to 2023-12-17 (GenBank release 259).\nInput data, including a database containing fern sequences from GenBank release 259, are available on FigShare.\nTwo datasets were produced:\n\nThe “plastome” dataset includes 79 loci obtained from whole plastomes for 621 species (including outgroup taxa).\nThe “Sanger” dataset includes 7 plastid loci for 5,804 species (including outgroup taxa).\n\nPhylogenetic analysis was carried out using maximum likelihood in IQ-TREE (Nguyen et al. 2015) in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.\nThe tree was dated using treePL (Smith and O’Meara 2012) with a set of 54 fossil constraints (not including the root).\n\n\n\n\nReferences\n\nNguyen, Lam-Tung, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh. 2015. “IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating Maximum-Likelihood Phylogenies.” Molecular Biology and Evolution 32 (1): 268–74. https://doi.org/10.1093/molbev/msu300.\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life.” Frontiers in Plant Sciences 13. https://doi.org/10.3389/fpls.2022.909768.\n\n\nSmith, Stephen A, and Brian C. O’Meara. 2012. “treePL: Divergence Time Estimation Using Penalized Likelihood for Large Phylogenies.” Bioinformatics 28 (20): 2689–90. https://doi.org/10.1093/bioinformatics/bts492."
-  },
-  {
-    "objectID": "viewer.html",
-    "href": "viewer.html",
-    "title": "Tree Viewer",
-    "section": "",
-    "text": "The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (outgroup not shown). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at Taxonium, where you can also upload other trees for viewing. For more details about using Taxonium, see the documentation.\nIf you want to view the tree in a desktop app, we recommend either Dendroscope3 or the Taxonium desktop app."
-  },
-  {
     "objectID": "contributing.html",
     "href": "contributing.html",
     "title": "Contributing",
@@ -131,6 +12,132 @@
     "title": "Contributing",
     "section": "Contributors (FTOL Working Group)",
     "text": "Contributors (FTOL Working Group)\nAlphabetical by last name\n\nSusan Fawcett\nWataru Iwasaki\nJoel H. Nitta\nSantiago Ramírez-Barahona\nEric Schuettpelz\nJacob Suissa"
+  },
+  {
+    "objectID": "viewer.html",
+    "href": "viewer.html",
+    "title": "Tree Viewer",
+    "section": "",
+    "text": "The interactive tree visualization below shows higher taxonomic groups (genus, family, order, etc.) by color on the dated, consensus tree (outgroup not shown). Default coloring is by family. Species names will appear when zoomed in or hovering over a tip. The same visualization is available at Taxonium, where you can also upload other trees for viewing. For more details about using Taxonium, see the documentation.\nIf you want to view the tree in a desktop app, we recommend either Dendroscope3 or the Taxonium desktop app."
+  },
+  {
+    "objectID": "shiny.html",
+    "href": "shiny.html",
+    "title": "Data explorer",
+    "section": "",
+    "text": "Please use the FTOL data explorer web app (https://fernphy.shinyapps.io/ftol_explorer/) to easily access more information about particular species in the tree, including GenBank accessions and taxonomy.\n\n\n\nScreenshot of FTOL explorer app"
+  },
+  {
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "News",
+    "section": "",
+    "text": "FTOL v1.7.0 released."
+  },
+  {
+    "objectID": "news.html#section",
+    "href": "news.html#section",
+    "title": "News",
+    "section": "",
+    "text": "FTOL v1.7.0 released."
+  },
+  {
+    "objectID": "news.html#section-1",
+    "href": "news.html#section-1",
+    "title": "News",
+    "section": "2024-03-14",
+    "text": "2024-03-14\n\nFTOL v1.6.0 released."
+  },
+  {
+    "objectID": "news.html#section-2",
+    "href": "news.html#section-2",
+    "title": "News",
+    "section": "2023-12-20",
+    "text": "2023-12-20\n\nFTOL v1.5.1 released."
+  },
+  {
+    "objectID": "news.html#section-3",
+    "href": "news.html#section-3",
+    "title": "News",
+    "section": "2023-08-17",
+    "text": "2023-08-17\n\nFTOL v1.5.0 released."
+  },
+  {
+    "objectID": "news.html#section-4",
+    "href": "news.html#section-4",
+    "title": "News",
+    "section": "2023-02-16",
+    "text": "2023-02-16\n\nFTOL v1.4.0 released. This release includes an important fix for a bug that previously suppressed the number of new species added to the tree."
+  },
+  {
+    "objectID": "news.html#section-5",
+    "href": "news.html#section-5",
+    "title": "News",
+    "section": "2022-12-06",
+    "text": "2022-12-06\n\nFTOL v1.3.0 released."
+  },
+  {
+    "objectID": "news.html#section-6",
+    "href": "news.html#section-6",
+    "title": "News",
+    "section": "2022-11-22",
+    "text": "2022-11-22\n\nFTOL visualization changed from iTOL to Taxonium. The Taxonium visualization is much faster, allowing for easy viewing directly in the browser."
+  },
+  {
+    "objectID": "news.html#section-7",
+    "href": "news.html#section-7",
+    "title": "News",
+    "section": "2022-11-08",
+    "text": "2022-11-08\n\nFTOL v1.2.0 and v1.2.1 released. The total number of species is similar to v1.1.0, but adds &gt; 50 plastome sequences, resulting in a more robust backbone phylogeny."
+  },
+  {
+    "objectID": "news.html#section-8",
+    "href": "news.html#section-8",
+    "title": "News",
+    "section": "2022-08-31",
+    "text": "2022-08-31\n\nFTOL featured in 538’s “Data is Plural” blog."
+  },
+  {
+    "objectID": "news.html#section-9",
+    "href": "news.html#section-9",
+    "title": "News",
+    "section": "2022-08-24",
+    "text": "2022-08-24\n\nThe paper describing FTOL, “An open and continuously updated fern tree of life” published in Frontiers in Plant Science."
+  },
+  {
+    "objectID": "news.html#section-10",
+    "href": "news.html#section-10",
+    "title": "News",
+    "section": "2021-07-21",
+    "text": "2021-07-21\n\nPreprint for FTOL available on bioRxiv."
+  },
+  {
+    "objectID": "news.html#section-11",
+    "href": "news.html#section-11",
+    "title": "News",
+    "section": "2022-06-24",
+    "text": "2022-06-24\n\nFTO v1.1.0 released. From this point onwards, FTOL releases are tied to specific versions of GenBank."
+  },
+  {
+    "objectID": "news.html#section-12",
+    "href": "news.html#section-12",
+    "title": "News",
+    "section": "2022-04-01",
+    "text": "2022-04-01\n\nFTOL v1.0.0 released."
+  },
+  {
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "Methods",
+    "section": "",
+    "text": "For a full description of methods, see Nitta et al. (2022).\nThe goal of this project is to produce a maximally sampled global fern phylogeny.\nAll DNA sequence data were downloaded from GenBank. The current FTOL (v1.7.0) includes sequences up to 2024-06-15 (GenBank release 261).\nInput data, including a database containing fern sequences from GenBank release 261, are available on FigShare.\nTwo datasets were produced:\n\nThe “plastome” dataset includes 79 loci obtained from whole plastomes for 654 species (including outgroup taxa).\nThe “Sanger” dataset includes 7 plastid loci for 5,869 species (including outgroup taxa).\n\nPhylogenetic analysis was carried out using maximum likelihood in IQ-TREE (Nguyen et al. 2015) in two steps. First, a backbone phylogeny was built using the plastome dataset. Next, the full phylogeny was built using the Sanger dataset with the backbone phylogeny as a constraint tree. For both analyses, all loci were concatenated and no partitioning was used.\nThe tree was dated using treePL (Smith and O’Meara 2012) with a set of 54 fossil constraints (not including the root).\n\n\n\n\nReferences\n\nNguyen, Lam-Tung, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh. 2015. “IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating Maximum-Likelihood Phylogenies.” Molecular Biology and Evolution 32 (1): 268–74. https://doi.org/10.1093/molbev/msu300.\n\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life.” Frontiers in Plant Sciences 13. https://doi.org/10.3389/fpls.2022.909768.\n\n\nSmith, Stephen A, and Brian C. O’Meara. 2012. “treePL: Divergence Time Estimation Using Penalized Likelihood for Large Phylogenies.” Bioinformatics 28 (20): 2689–90. https://doi.org/10.1093/bioinformatics/bts492."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fern Tree of Life",
+    "section": "",
+    "text": "A webportal hosting the Fern Tree of Life (FTOL) and associated data\n\nFTOL is a global phylogeny of extant fern species based on plastid DNA sequences.\nFor a complete description, see Nitta et al. (2022).\nFTOL is an on-going project and will be regularly updated as new sequence data become available.\n\n\n\n\nReferences\n\nNitta, Joel H., Eric Schuettpelz, Santiago Ramírez-Barahona, and Wataru Iwasaki. 2022. “An Open and Continuously Updated Fern Tree of Life.” Frontiers in Plant Sciences 13. https://doi.org/10.3389/fpls.2022.909768."
   },
   {
     "objectID": "downloads.html",
@@ -154,17 +161,17 @@
     "text": "ftolr R package\nFor reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the ftolr R package."
   },
   {
-    "objectID": "downloads.html#current-v1.6.0",
-    "href": "downloads.html#current-v1.6.0",
+    "objectID": "downloads.html#current-v1.7.0",
+    "href": "downloads.html#current-v1.7.0",
     "title": "Downloads",
-    "section": "Current: v1.6.0",
-    "text": "Current: v1.6.0\nBuilt with data from GenBank release 259 (cutoff date 2023-12-17). Includes 602 complete plastome sequences and 5,785 tips total (outgroups excluded unless otherwise mentioned).\n\nzip\ntar.gz"
+    "section": "Current: v1.7.0",
+    "text": "Current: v1.7.0\nBuilt with data from GenBank release 261 (cutoff date 2024-06-15). Includes 635 complete plastome sequences and 5,850 tips total (outgroups excluded unless otherwise mentioned).\n\nzip\ntar.gz"
   },
   {
     "objectID": "downloads.html#past-versions",
     "href": "downloads.html#past-versions",
     "title": "Downloads",
     "section": "Past versions",
-    "text": "Past versions\n\nv1.5.1\nBuilt with data from GenBank release 258 (cutoff date 2023-10-15). Includes 591 complete plastome sequences and 5,785 tips total.\n\nzip\ntar.gz\n\n\n\nv1.5.0\nBuilt with data from GenBank release 256 (cutoff date 2023-06-15). Includes 570 complete plastome sequences and 5,750 tips total.\n\nzip\ntar.gz\n\n\n\nv1.4.0\nBuilt with data from GenBank release 253 (cutoff date 2022-12-15). Includes 509 complete plastome sequences and 5,685 tips total.\n\nzip\ntar.gz\n\n\n\nv1.3.0\nBuilt with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total.\n\nzip\ntar.gz\n\n\n\nv1.2.1\nTree exactly same as v1.2.0. Adds taxonomic name resolution results to data zip file.\n\nzip\ntar.gz\n\n\n\nv1.2.0\nBuilt with data from GenBank release 251 (cutoff date 2022-08-15). Includes 479 complete plastome sequences and 5,589 tips total.\n\nzip\ntar.gz\n\n\n\nv1.1.0\nBuilt with data from GenBank release 249 (cutoff date 2022-04-15). Includes 423 complete plastome sequences and 5,582 tips total.\n\nzip\ntar.gz\n\n\n\nv1.0.0\nCutoff date 2021-12-31. Does not include algae and was rooted on bryophytes.\n\nzip\ntar.gz\n\n\n\nv0.0.1\nHosted on FigShare and lacks some of the tree formats above due to changes in methodology.\n\nData on FigShare"
+    "text": "Past versions\n\nv1.6.0\nBuilt with data from GenBank release 259 (cutoff date 2023-12-17). Includes 602 complete plastome sequences and 5,785 tips total.\n\nzip\ntar.gz\n\n\n\nv1.5.1\nBuilt with data from GenBank release 258 (cutoff date 2023-10-15). Includes 591 complete plastome sequences and 5,785 tips total.\n\nzip\ntar.gz\n\n\n\nv1.5.0\nBuilt with data from GenBank release 256 (cutoff date 2023-06-15). Includes 570 complete plastome sequences and 5,750 tips total.\n\nzip\ntar.gz\n\n\n\nv1.4.0\nBuilt with data from GenBank release 253 (cutoff date 2022-12-15). Includes 509 complete plastome sequences and 5,685 tips total.\n\nzip\ntar.gz\n\n\n\nv1.3.0\nBuilt with data from GenBank release 252 (cutoff date 2022-10-15). Includes 485 complete plastome sequences and 5,592 tips total.\n\nzip\ntar.gz\n\n\n\nv1.2.1\nTree exactly same as v1.2.0. Adds taxonomic name resolution results to data zip file.\n\nzip\ntar.gz\n\n\n\nv1.2.0\nBuilt with data from GenBank release 251 (cutoff date 2022-08-15). Includes 479 complete plastome sequences and 5,589 tips total.\n\nzip\ntar.gz\n\n\n\nv1.1.0\nBuilt with data from GenBank release 249 (cutoff date 2022-04-15). Includes 423 complete plastome sequences and 5,582 tips total.\n\nzip\ntar.gz\n\n\n\nv1.0.0\nCutoff date 2021-12-31. Does not include algae and was rooted on bryophytes.\n\nzip\ntar.gz\n\n\n\nv0.0.1\nHosted on FigShare and lacks some of the tree formats above due to changes in methodology.\n\nData on FigShare"
   }
 ]
