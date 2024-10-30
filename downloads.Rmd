@@ -58,6 +58,13 @@ Built with data from GenBank release `r ft_data_ver("gb")` (cutoff date `r ft_da
 
 ## Past versions
 
+### v1.6.0
+
+Built with data from GenBank release 259 (cutoff date 2023-12-17). Includes 602 complete plastome sequences and 5,785 tips total.
+
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.6.0.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.6.0.tar.gz)
+
 ### v1.5.1
 
 Built with data from GenBank release 258 (cutoff date 2023-10-15). Includes 591 complete plastome sequences and 5,785 tips total.
