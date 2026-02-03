@@ -43,7 +43,8 @@ For reading the data directly into R with more options (rooting, inclusion of ou
 ```{r}
 backbone_n <-
   ft_tree(branch_len = "raw", backbone = TRUE, drop_og = TRUE) |>
-  ape::Ntip()
+  ape::Ntip() |>
+  scales::number(big.mark = ",")
 
 full_tree_n <-
   ft_tree(drop_og = TRUE) |>
@@ -57,6 +58,13 @@ Built with data from GenBank release `r ft_data_ver("gb")` (cutoff date `r ft_da
 - [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v`r ft_data_ver()`.tar.gz)
 
 ## Past versions
+
+### v1.7.0
+
+Built with data from GenBank release 261 (cutoff date 2024-06-15). Includes 635 complete plastome sequences and 5,850 tips total.
+
+- [zip](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.7.0.zip)
+- [tar.gz](https://github.com/fernphy/ftol_data/archive/refs/tags/v1.7.0.tar.gz)
 
 ### v1.6.0
 

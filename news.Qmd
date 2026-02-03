@@ -5,10 +5,14 @@ description: |
 title-block-banner: true 
 ---
 
-## 2024-10-30
+## 2026-02-03
 
 <!-- FIXME: change 'current' URL when update to next version -->
-- [FTOL v1.7.0 released](https://fernphy.github.io/downloads.html#current-v1.7.0).
+- [FTOL v1.8.0 released](https://fernphy.github.io/downloads.html#current-v1.8.0).
+
+## 2024-10-30
+
+- [FTOL v1.7.0 released](https://fernphy.github.io/downloads.html#v1.7.0).
 
 ## 2024-03-14
 
