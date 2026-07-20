@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fernphy.github.io/news.html</loc>
-    <lastmod>2026-02-03T07:36:28.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernphy.github.io/viewer.html</loc>
-    <lastmod>2026-02-03T07:36:28.821Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernphy.github.io/index.html</loc>
-    <lastmod>2026-02-03T07:36:28.820Z</lastmod>
+    <loc>https://fernphy.github.io/methods.html</loc>
+    <lastmod>2026-07-20T07:55:49.806Z</lastmod>
   </url>
   <url>
     <loc>https://fernphy.github.io/downloads.html</loc>
-    <lastmod>2026-02-03T07:36:28.818Z</lastmod>
+    <lastmod>2026-07-20T07:55:49.804Z</lastmod>
   </url>
   <url>
-    <loc>https://fernphy.github.io/methods.html</loc>
-    <lastmod>2026-02-03T07:36:28.820Z</lastmod>
+    <loc>https://fernphy.github.io/news.html</loc>
+    <lastmod>2026-07-20T07:55:49.806Z</lastmod>
   </url>
   <url>
-    <loc>https://fernphy.github.io/shiny.html</loc>
-    <lastmod>2026-02-03T07:36:28.821Z</lastmod>
+    <loc>https://fernphy.github.io/viewer.html</loc>
+    <lastmod>2026-07-20T07:55:49.807Z</lastmod>
   </url>
   <url>
     <loc>https://fernphy.github.io/contributing.html</loc>
-    <lastmod>2026-02-03T07:36:28.818Z</lastmod>
+    <lastmod>2026-07-20T07:55:49.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fernphy.github.io/shiny.html</loc>
+    <lastmod>2026-07-20T07:55:49.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fernphy.github.io/index.html</loc>
+    <lastmod>2026-07-20T07:55:49.806Z</lastmod>
   </url>
 </urlset>
