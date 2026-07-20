@@ -1,0 +1,135 @@
+---
+title: "Clade ages"
+description: |
+  Stem and crown ages for major fern clades
+title-block-banner: true
+bibliography: references.yaml
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ftolr)
+library(ape)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(DT)
+```
+
+```{r calc-ages, include=FALSE}
+# Dated, consensus tree with outgroup removed
+phy <- ft_tree(branch_len = "ultra", rooted = TRUE, drop_og = TRUE)
+
+# Fern taxonomy for species included in the tree
+taxonomy <- ftol_taxonomy |>
+  filter(species %in% phy$tip.label)
+
+# Distance of every node (tip and internal) from the root
+node_depth <- node.depth.edgelength(phy)
+root_age <- max(node_depth)
+
+# Parent node of every node, keyed by node number
+parent_of <- setNames(phy$edge[, 1], phy$edge[, 2])
+
+# For a set of species (all belonging to the same taxon), get the number
+# sampled in FTOL, crown age, stem age, and whether they form a
+# monophyletic group
+clade_ages <- function(species) {
+  tips <- match(species, phy$tip.label)
+  tips <- tips[!is.na(tips)]
+  n <- length(tips)
+  if (n == 1) {
+    # Can't calculate a crown age or assess monophyly with only one tip
+    node <- tips
+    crown_age <- NA_real_
+    monophyletic <- NA
+  } else {
+    node <- getMRCA(phy, tips)
+    crown_age <- root_age - node_depth[node]
+    monophyletic <- is.monophyletic(phy, tips)
+  }
+  parent_node <- parent_of[as.character(node)]
+  stem_age <- if (is.na(parent_node)) crown_age else root_age - node_depth[parent_node]
+  tibble(
+    n_species = n, crown_age = crown_age,
+    stem_age = stem_age, monophyletic = monophyletic
+  )
+}
+
+# Calculate ages for every taxon at a given taxonomic rank (column name in
+# `taxonomy`, e.g., "family")
+ages_by_rank <- function(rank) {
+  taxonomy |>
+    filter(!is.na(.data[[rank]])) |>
+    group_by(taxon = .data[[rank]]) |>
+    summarize(species = list(species), .groups = "drop") |>
+    mutate(ages = map(species, clade_ages)) |>
+    select(-species) |>
+    unnest(ages)
+}
+
+# Order and family that each taxon at a given rank belongs to (NA if not
+# applicable, i.e., the taxon *is* an order, or is not classified into a
+# family, e.g., a suborder)
+order_lookup <- taxonomy |> distinct(order)
+suborder_lookup <- taxonomy |> distinct(suborder, order)
+family_lookup <- taxonomy |> distinct(family, order)
+subfamily_lookup <- taxonomy |> distinct(subfamily, family, order)
+genus_lookup <- taxonomy |> distinct(genus, family, order)
+
+all_ages <- bind_rows(
+  ages_by_rank("order") |>
+    mutate(rank = "Order", order = taxon, family = NA_character_),
+  ages_by_rank("suborder") |>
+    left_join(suborder_lookup, by = c("taxon" = "suborder")) |>
+    mutate(rank = "Suborder", family = NA_character_),
+  ages_by_rank("family") |>
+    left_join(family_lookup, by = c("taxon" = "family")) |>
+    mutate(rank = "Family", family = taxon),
+  ages_by_rank("subfamily") |>
+    left_join(subfamily_lookup, by = c("taxon" = "subfamily")) |>
+    mutate(rank = "Subfamily"),
+  ages_by_rank("genus") |>
+    left_join(genus_lookup, by = c("taxon" = "genus")) |>
+    mutate(rank = "Genus")
+) |>
+  mutate(
+    rank = factor(
+      rank,
+      levels = c("Order", "Suborder", "Family", "Subfamily", "Genus")
+    ),
+    across(c(crown_age, stem_age), \(x) round(x, 1)),
+    monophyletic = case_when(
+      is.na(monophyletic) ~ "-",
+      monophyletic ~ "Yes",
+      TRUE ~ "No"
+    )
+  ) |>
+  arrange(rank, order, family, taxon) |>
+  select(rank, order, family, taxon, n_species, stem_age, crown_age, monophyletic) |>
+  rename(
+    Rank = rank,
+    Order = order,
+    Family = family,
+    Taxon = taxon,
+    `N species (sampled)` = n_species,
+    `Stem age (Ma)` = stem_age,
+    `Crown age (Ma)` = crown_age,
+    Monophyletic = monophyletic
+  )
+```
+
+The table below provides crown and stem ages for fern orders, suborders, families, subfamilies, and genera, calculated directly from the current dated, consensus tree (FTOL v`r ft_data_ver()`). Because it is generated automatically from FTOL, these ages will update as the tree grows and dating estimates are refined with each new release.
+
+**Crown age** is the age of the most recent common ancestor (MRCA) of all species sampled in FTOL for a given taxon. **Stem age** is the age at which that taxon diverged from its sister lineage, i.e., the age of the node immediately ancestral to the crown node. Ages are in millions of years (Ma). The `Order` and `Family` columns show the higher classification of each taxon [@PPGI2016] and can be used to filter the table; only Polypodiales is formally divided into suborders, and not all families are divided into subfamilies.
+
+Some taxa are not recovered as monophyletic in FTOL (see the `Monophyletic` column); for these, ages should be interpreted with caution, since the MRCA may also subtend species from other clades. Taxa represented by only a single sampled species have no meaningful crown age (shown as `NA`).
+
+```{r}
+datatable(
+  all_ages,
+  rownames = FALSE,
+  filter = "top",
+  options = list(pageLength = 25)
+)
+```

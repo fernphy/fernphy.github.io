@@ -81,6 +81,21 @@ references:
   type: article-journal
   URL: https://doi.org/10.3389/fpls.2022.909768
   volume: '13'
+- id: PPGI2016
+  author:
+  - literal: Pteridophyte Phylogeny Group I
+  citation-key: PPGI2016
+  container-title: Journal of Systematics and Evolution
+  DOI: 10.1111/jse.12229
+  issue: '6'
+  issued:
+  - year: 2016
+  language: en
+  page: 563-603
+  title: A community-derived classification for extant lycophytes and ferns
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/10.1111/jse.12229
+  volume: '54'
 - id: Smith2012
   author:
   - family: Smith
@@ -100,3 +115,20 @@ references:
     phylogenies'
   type: article-journal
   volume: '28'
+- id: Testo2016
+  author:
+  - family: Testo
+    given: Weston
+  - family: Sundue
+    given: Michael
+  citation-key: Testo2016
+  container-title: Molecular Phylogenetics and Evolution
+  DOI: 10.1016/j.ympev.2016.09.003
+  issued:
+  - year: 2016
+  language: en
+  page: 200-211
+  title: A 4000-species dataset provides new insight into the evolution of ferns
+  type: article-journal
+  URL: https://doi.org/10.1016/j.ympev.2016.09.003
+  volume: '105'

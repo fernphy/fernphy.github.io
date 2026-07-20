@@ -13,6 +13,8 @@ website:
         text: Tree viewer
       - href: shiny.Rmd
         text: Data explorer
+      - href: ages.Rmd
+        text: Clade ages
       - href: downloads.Rmd
         text: Downloads
       - href: news.Qmd
