@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,10 +62,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0a7585c25148850503c97f3de18dbb07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7965abab3ba00a1586b725e4574639dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -182,9 +185,10 @@ div.csl-indent {
   <li><a href="#other-data-files" id="toc-other-data-files" class="nav-link" data-scroll-target="#other-data-files">Other data files</a></li>
   </ul></li>
   <li><a href="#ftolr-r-package" id="toc-ftolr-r-package" class="nav-link" data-scroll-target="#ftolr-r-package"><code>ftolr</code> R package</a></li>
-  <li><a href="#current-v1.8.0" id="toc-current-v1.8.0" class="nav-link" data-scroll-target="#current-v1.8.0">Current: v1.8.0</a></li>
+  <li><a href="#current-v1.9.0" id="toc-current-v1.9.0" class="nav-link" data-scroll-target="#current-v1.9.0">Current: v1.9.0</a></li>
   <li><a href="#past-versions" id="toc-past-versions" class="nav-link" data-scroll-target="#past-versions">Past versions</a>
   <ul class="collapse">
+  <li><a href="#v1.8.0" id="toc-v1.8.0" class="nav-link" data-scroll-target="#v1.8.0">v1.8.0</a></li>
   <li><a href="#v1.7.0" id="toc-v1.7.0" class="nav-link" data-scroll-target="#v1.7.0">v1.7.0</a></li>
   <li><a href="#v1.6.0" id="toc-v1.6.0" class="nav-link" data-scroll-target="#v1.6.0">v1.6.0</a></li>
   <li><a href="#v1.5.1" id="toc-v1.5.1" class="nav-link" data-scroll-target="#v1.5.1">v1.5.1</a></li>
@@ -232,16 +236,24 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="ftolr-r-package"><code>ftolr</code> R package</h2>
 <p>For reading the data directly into R with more options (rooting, inclusion of outgroup, selection of only part of the alignment, etc.), use the <a href="https://github.com/fernphy/ftolr">ftolr R package</a>.</p>
 </section>
-<section id="current-v1.8.0" class="level2">
-<h2 class="anchored" data-anchor-id="current-v1.8.0">Current: v1.8.0</h2>
-<p>Built with data from GenBank release 269 (cutoff date 2025-12-09). Includes 1,038 complete plastome sequences and 6,216 tips total (outgroups excluded unless otherwise mentioned).</p>
+<section id="current-v1.9.0" class="level2">
+<h2 class="anchored" data-anchor-id="current-v1.9.0">Current: v1.9.0</h2>
+<p>Built with data from GenBank release 273 (cutoff date 2026-08-02). Includes 1,139 complete plastome sequences and 6,388 tips total (outgroups excluded unless otherwise mentioned).</p>
+<ul>
+<li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.9.0.zip">zip</a></li>
+<li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.9.0.tar.gz">tar.gz</a></li>
+</ul>
+</section>
+<section id="past-versions" class="level2">
+<h2 class="anchored" data-anchor-id="past-versions">Past versions</h2>
+<section id="v1.8.0" class="level3">
+<h3 class="anchored" data-anchor-id="v1.8.0">v1.8.0</h3>
+<p>Built with data from GenBank release 269 (cutoff date 2025-12-09). Includes 1,038 complete plastome sequences and 6,216 tips total.</p>
 <ul>
 <li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.8.0.zip">zip</a></li>
 <li><a href="https://github.com/fernphy/ftol_data/archive/refs/tags/v1.8.0.tar.gz">tar.gz</a></li>
 </ul>
 </section>
-<section id="past-versions" class="level2">
-<h2 class="anchored" data-anchor-id="past-versions">Past versions</h2>
 <section id="v1.7.0" class="level3">
 <h3 class="anchored" data-anchor-id="v1.7.0">v1.7.0</h3>
 <p>Built with data from GenBank release 261 (cutoff date 2024-06-15). Includes 635 complete plastome sequences and 5,850 tips total.</p>
