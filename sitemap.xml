@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fernphy.github.io/contributing.html</loc>
-    <lastmod>2026-10-05T02:36:32.890Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernphy.github.io/shiny.html</loc>
-    <lastmod>2026-10-05T02:36:32.893Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernphy.github.io/news.html</loc>
-    <lastmod>2026-10-05T02:36:32.892Z</lastmod>
-  </url>
-  <url>
     <loc>https://fernphy.github.io/index.html</loc>
-    <lastmod>2026-10-05T02:36:32.892Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fernphy.github.io/downloads.html</loc>
-    <lastmod>2026-10-05T02:36:32.890Z</lastmod>
+    <lastmod>2026-11-12T02:50:15.820Z</lastmod>
   </url>
   <url>
     <loc>https://fernphy.github.io/methods.html</loc>
-    <lastmod>2026-10-05T02:36:32.892Z</lastmod>
+    <lastmod>2026-11-12T02:50:15.820Z</lastmod>
   </url>
   <url>
-    <loc>https://fernphy.github.io/ages.html</loc>
-    <lastmod>2026-10-05T02:36:32.890Z</lastmod>
+    <loc>https://fernphy.github.io/shiny.html</loc>
+    <lastmod>2026-11-12T02:50:15.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fernphy.github.io/downloads.html</loc>
+    <lastmod>2026-11-12T02:50:15.819Z</lastmod>
   </url>
   <url>
     <loc>https://fernphy.github.io/viewer.html</loc>
-    <lastmod>2026-10-05T02:36:32.893Z</lastmod>
+    <lastmod>2026-11-12T02:50:15.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fernphy.github.io/news.html</loc>
+    <lastmod>2026-11-12T02:50:15.820Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fernphy.github.io/contributing.html</loc>
+    <lastmod>2026-11-12T02:50:15.819Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fernphy.github.io/ages.html</loc>
+    <lastmod>2026-11-12T02:50:15.819Z</lastmod>
   </url>
 </urlset>
