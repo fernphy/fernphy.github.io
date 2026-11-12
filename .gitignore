@@ -9,3 +9,4 @@ _data-raw
 /.quarto/
 
 **/*.quarto_ipynb
+explorer_data.json

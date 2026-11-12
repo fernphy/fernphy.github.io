@@ -11,7 +11,7 @@ website:
         text: Methods
       - href: viewer.Rmd
         text: Tree viewer
-      - href: shiny.Rmd
+      - href: explorer.qmd
         text: Data explorer
       - href: ages.Rmd
         text: Clade ages

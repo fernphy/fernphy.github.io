@@ -1,0 +1,320 @@
+---
+title: "Data explorer"
+aliases:
+  - shiny.html
+description: |
+  Dig deeper into FTOL data
+title-block-banner: true
+resources:
+  - explorer_data.json
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(readr)
+library(tidyr)
+
+# Build the data for the explorer from the installed version of ftolr, so it
+# is regenerated (and stays in sync with the other pages) every time the site
+# is rendered. All joining is done here so the browser only does lookups.
+
+# Version of the PPG taxonomy used to build this FTOL release (the `load_ppg()`
+# version in the ftol pipeline's _targets.R). ftolr does not record it, so
+# UPDATE THIS BY HAND at each release (see docs/updating.md, website step).
+ppg_ver <- "2.0.0"
+
+ftol_ver <- ftolr::ft_data_ver()
+gb_release <- ftolr::ft_data_ver("gb")
+
+# Taxonomy: one row per NCBI taxid
+match_results <- ftolr::ftol_match_results |>
+  mutate(ncbi_taxid = parse_number(taxid)) |>
+  select(
+    ncbi_taxid, query, matched_name, resolved_name,
+    matched_status, match_type
+  )
+stopifnot(!anyNA(match_results$ncbi_taxid))
+
+acc_tax <- ftolr::accessions_long |>
+  select(species, locus, accession, seq_len, ncbi_taxid) |>
+  left_join(match_results, by = "ncbi_taxid") |>
+  arrange(species, locus)
+
+voucher <- ftolr::accessions_wide |>
+  select(species, join_by, specimen_voucher, publication, outgroup)
+
+species_list <- sort(voucher$species)
+
+explorer_data <- lapply(species_list, function(sp) {
+  d <- acc_tax[acc_tax$species == sp, ]
+  tax <- d |>
+    select(
+      accession, ncbi_taxid, query, matched_name, resolved_name,
+      matched_status, match_type
+    )
+  # If every accession has the same taxonomy, show a single row without
+  # the accession column
+  tax_simple <- unique(select(tax, -accession))
+  per_accession <- nrow(tax_simple) != 1
+  list(
+    acc = select(d, locus, accession, seq_len),
+    voucher = as.list(voucher[voucher$species == sp, -1]),
+    tax = if (per_accession) tax else tax_simple,
+    tax_per_accession = per_accession
+  )
+})
+names(explorer_data) <- species_list
+
+jsonlite::write_json(
+  list(
+    ftol_ver = ftol_ver,
+    gb_release = gb_release,
+    species = species_list,
+    data = explorer_data
+  ),
+  "explorer_data.json",
+  auto_unbox = TRUE,
+  na = "null",
+  dataframe = "rows",
+  digits = NA
+)
+
+# Taxonium config (same as the Tree viewer page). The "[" and "]" are
+# removed, as in viewer.Rmd.
+config_string <- jsonlite::toJSON(
+  list(
+    source = paste("GenBank release", gb_release),
+    title = paste0("FTOL v", ftol_ver)
+  ),
+  auto_unbox = TRUE
+) |>
+  as.character()
+
+ojs_define(config_string = config_string)
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+explorer = FileAttachment("explorer_data.json").json()
+```
+
+Select a species to see its GenBank accessions, specimen voucher, and
+taxonomy in FTOL v`r ftol_ver` (GenBank release `r gb_release`). You can
+type into the search box to auto-complete.
+
+
+```{ojs}
+//| echo: false
+//| output: false
+{
+  // Keep the URL in sync so that the current species can be shared
+  const url = new URL(location.href);
+  url.searchParams.set("species", species);
+  history.replaceState(null, "", url);
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+// Helpers to build tables with links
+// Plain HTML table (no row-selection checkboxes)
+makeTable = (rows, cols, format = {}) => html`<table class="table table-sm table-hover">
+  <thead><tr>${cols.map((c) => html`<th>${c}</th>`)}</tr></thead>
+  <tbody>${rows.map((r) => html`<tr>${cols.map((c) => html`<td>${
+    r[c] == null ? "" : format[c] ? format[c](r[c]) : String(r[c])
+  }</td>`)}</tr>`)}</tbody></table>`
+
+nuccore = (acc) =>
+  html`<a href="https://www.ncbi.nlm.nih.gov/nuccore/${acc}" target="_blank" rel="noopener">${acc}</a>`
+taxlink = (id) =>
+  html`<a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${id}" target="_blank" rel="noopener">${id}</a>`
+
+taxCols = sp.tax_per_accession
+  ? ["accession", "ncbi_taxid", "query", "matched_name", "resolved_name",
+     "matched_status", "match_type"]
+  : ["ncbi_taxid", "query", "matched_name", "resolved_name",
+     "matched_status", "match_type"]
+
+// Link to the species in the tree (Taxonium)
+treeUrl = {
+  const base = "https://taxonium.org/?treeUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_vis%2Fmain%2F_targets%2Fuser%2Ftaxonium%2Fftol_tree.tree&ladderizeTree=true&treeType=nwk&metaUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffernphy%2Fftol_vis%2Fmain%2F_targets%2Fuser%2Ftaxonium%2Fftol_data.csv&metaType=meta_csv&xType=x_dist&color=%7B%22field%22%3A%22meta_family%22%7D";
+  const config = encodeURIComponent(config_string.replace(/[\[\]]/g, ""));
+  const srch = encodeURIComponent(JSON.stringify([{
+    key: "aa1", type: "name", method: "text_match", text: species,
+    gene: "S", position: 484, new_residue: "any", min_tips: 0
+  }]));
+  return `${base}&config=${config}&srch=${srch}&zoomToSearch=0`;
+}
+```
+
+::: {.panel-tabset}
+
+## Data
+
+```{ojs}
+//| echo: false
+// Species selection with a searchable (auto-completing) text box.
+// Species can be preselected with a URL parameter, e.g. ?species=Equisetum_arvense
+viewof speciesInput = {
+  const initial = new URLSearchParams(location.search).get("species");
+  const start = explorer.species.includes(initial)
+    ? initial
+    : explorer.species[0];
+  const MAX = 10;
+  const input = html`<input type="text" value="${start}" class="form-control"
+    placeholder="Start typing a species name" autocomplete="off"
+    role="combobox" aria-label="Species" aria-expanded="false">`;
+  const menu = html`<ul class="list-group shadow-sm" role="listbox"
+    style="display:none; margin-top:2px; max-height:20em;
+    overflow-y:auto"></ul>`;
+  const wrap = html`<div style="max-width:28em"
+    >${input}${menu}</div>`;
+  wrap.value = start;
+  let matches = [];
+  let active = -1;
+
+  const find = (q) => {
+    q = q.trim().toLowerCase().replace(/ /g, "_");
+    if (!q) return [];
+    const starts = [], contains = [];
+    for (const s of explorer.species) {
+      const l = s.toLowerCase();
+      if (l.startsWith(q)) starts.push(s);
+      else if (l.includes(q)) contains.push(s);
+      if (starts.length >= MAX) break;
+    }
+    return starts.concat(contains).slice(0, MAX);
+  };
+  const close = () => { menu.style.display = "none"; active = -1;
+    input.setAttribute("aria-expanded", "false"); };
+  const choose = (s) => {
+    input.value = s;
+    close();
+    wrap.value = s;
+    wrap.dispatchEvent(new CustomEvent("input"));
+  };
+  const render = () => {
+    menu.replaceChildren(...matches.map((s, i) => {
+      const li = html`<li class="list-group-item list-group-item-action py-1"
+        role="option" style="cursor:pointer">${s}</li>`;
+      if (i === active) li.classList.add("active");
+      li.addEventListener("mousedown", (e) => { e.preventDefault(); choose(s); });
+      return li;
+    }));
+    const open = matches.length > 0;
+    menu.style.display = open ? "block" : "none";
+    input.setAttribute("aria-expanded", String(open));
+  };
+  input.addEventListener("input", (e) => {
+    e.stopPropagation();
+    matches = find(input.value);
+    active = -1;
+    render();
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") { active = Math.min(active + 1, matches.length - 1); render(); e.preventDefault(); }
+    else if (e.key === "ArrowUp") { active = Math.max(active - 1, 0); render(); e.preventDefault(); }
+    else if (e.key === "Enter") {
+      const pick = active >= 0 ? matches[active]
+        : explorer.species.includes(input.value) ? input.value : matches[0];
+      if (pick) choose(pick);
+      e.preventDefault();
+    } else if (e.key === "Escape") close();
+  });
+  input.addEventListener("focus", () => input.select());
+  // On leaving the box, restore the current valid species if the text is not one
+  input.addEventListener("blur", () => { close(); input.value = wrap.value; });
+  return wrap;
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+species = speciesInput
+sp = explorer.data[species]
+```
+
+### Accession
+
+```{ojs}
+//| echo: false
+makeTable(sp.acc, ["locus", "accession", "seq_len"], { accession: nuccore })
+```
+
+### Voucher
+
+```{ojs}
+//| echo: false
+makeTable([sp.voucher], ["join_by", "specimen_voucher", "publication", "outgroup"])
+```
+
+### Taxonomy
+
+```{ojs}
+//| echo: false
+makeTable(sp.tax, taxCols, { accession: nuccore, ncbi_taxid: taxlink })
+```
+
+```{ojs}
+//| echo: false
+html`<h4><a href="${treeUrl}" target="_blank" rel="noopener">View <i>${species.replace(/_/g, " ")}</i> in FTOL</a></h4>`
+```
+
+## How to use
+
+Start by selecting a species from the search box. Species names are
+shown with underscores in place of spaces, as in the tree. Clicking a
+GenBank accession or an NCBI taxonomic ID opens a new browser tab for that
+record.
+
+### Accession
+
+One row per accession for the selected species.
+
+- **locus**: Name of locus (gene or region)
+- **accession**: GenBank accession number
+- **seq_len**: Length of the sequence in basepairs
+
+### Voucher
+
+Only one row.
+
+- **join_by**: Method used to join sequences across loci within the species.
+- **specimen_voucher**: Specimen voucher, converted to all lowercase and with
+  spaces and punctuation removed to allow for matching.
+- **publication**: Publication for the accession(s).
+- **outgroup**: TRUE if species is in outgroup (non-ferns); FALSE if not
+  (ferns)
+
+### Taxonomy
+
+May have just one row if the data are the same for all accessions, or one row
+per accession if different accessions have different data.
+
+The reference taxonomy is the
+[Pteridophyte Phylogeny Group (PPG) taxonomy](https://github.com/pteridogroup/ppg),
+version `r ppg_ver`
+([release notes](https://github.com/pteridogroup/ppg/releases/tag/v`r ppg_ver`)).
+NCBI names are matched to PPG names, and synonyms are resolved to the accepted
+name in PPG.
+
+- **accession**: GenBank accession number. Only appears if different
+  accessions have different data.
+- **ncbi_taxid**: NCBI taxonomic ID for the accession (or species).
+- **query**: NCBI species name of accession used as query for name
+  resolution.
+- **matched_name**: Name matched by
+  [taxastand](https://github.com/joelnitta/taxastand) when querying the NCBI
+  name against the PPG taxonomic database.
+- **resolved_name**: The name ultimately used for FTOL; if the match was a
+  synonym, the resolved name is the accepted name.
+- **matched_status**: Taxonomic status of the matched name (typically, either
+  "accepted" or "synonym").
+- **match_type**: Type of match. For more information, see the
+  [taxastand vignette](https://joelnitta.github.io/taxastand/articles/basics.html#name-matching).
+
+:::
